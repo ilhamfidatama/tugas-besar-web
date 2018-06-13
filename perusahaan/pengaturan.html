@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<link href="perusahaan.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<div class="header">
+    	<div class="logo">
+        	<img src="foto/logo.jpg" alt="lOker" width="150px">
+        </div>
+        <div class="menu">
+        	<table width="100%" border="0px">
+  			<tbody valign="middle">
+    			<tr>
+      				<td align="left">
+      					<a href="login.html"> Nama Perusahaan </a>
+      				</td>
+      				<td align="right">
+      					<a href="login.html"> Keluar </a>
+      				</td>
+    			</tr>
+  			</tbody>
+			</table>
+        </div>
+    </div>
+    <div class="main">
+    	<div class="content">
+
+        <div class="kanan">
+          <div class="detail">
+          	<form method="post" action="pengaturan.php">
+            	<label>Pengaturan Akun</label>
+                <p>Email Utama :</p>
+                <input type="email" name="utama">
+                <p>Email Cadangan :</p>
+                <input type="email" name="cadangan">
+                <p>Kata Sandi Lama :</p>
+                <input type="password" name="lama">
+                <p>Kata Sandi Baru :</p>
+                <input type="password" name="baru">
+                <p>Ulang Kata Sandi Baru :</p>
+                <input type="password" name="ulang">
+                <br><br>
+                <button class="batal" type="submit" name="batal" value="0">Batal</button>
+                <button class="simpan" type="submit" name="simpan" value="1">Simpan</button>
+            </form>
+          </div>
+         
+        </div>
+
+        <div class="kiri">
+		<div class="pilihan">
+          <a href="profil.html">Profil Perusahaan</a>
+        </div>
+        <div class="pilihan">
+          <a href="Manajemen.html">Manajemen Pekerja</a>
+       	</div>
+       	<div class="pilihan">
+          <a href="Pelamar.html">Pelamar</a>
+        </div>
+        <div class="pilihan">
+          <a href="Upload.html">Upload Lowongan</a>
+        </div>
+        <div class="pilihan">
+            <a href="Pengaturan.html">Pengaturan</a> 
+		</div>
+        </div>	
+    </div>
+</div>
+    <div class="footer">
+        <p>Hak Cipta &copy;Informatika UNRAM </p>
+    </div>
+</body>
+</html>

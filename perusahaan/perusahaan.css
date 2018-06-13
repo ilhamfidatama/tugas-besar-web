@@ -1,0 +1,150 @@
+@charset "utf-8";
+body{
+	
+	background-color:#E4E4E4;
+	
+}
+
+.header{
+	position:relative;
+	height:auto;
+}
+
+.logo{
+	width:auto;
+	background-color:#FFFFFF;
+}
+
+.menu{
+	margin:0px auto;
+	position:relative;
+	background-color: #0021E9;
+	font-size: 20px;
+	height: 40px;
+}
+
+.menu a{
+	text-decoration:none;
+	vertical-align: middle;
+	color: #FFFFFF;
+	line-height:30px;
+	margin:auto 30px;
+}
+
+.main{
+	position: relative;
+	margin:-10px auto;
+	width:100%;
+	top:0px;
+	min-height:504px;
+	max-height:1000px;
+}
+
+.main1{
+	position: relative;
+	margin:-10px auto;
+	width:100%;
+	top:0px;
+	min-height:1430px;
+}
+
+.content{
+	position:relative;
+	width:80%;
+	min-height:435px;
+	max-height:960px;
+	margin:0px auto;
+	top:10px;
+}
+
+.gambar img{
+	width:100%;
+	height:175px;
+}
+
+.kiri{
+	position:relative;
+	width:27%;
+	min-height:210px;
+	background-color: white;
+}
+
+.pilihan{
+	top:10px;
+	position:relative;
+	margin:10px auto;
+	padding-left:15px;
+	width: auto;
+	height: 30px;
+	bottom:10px;
+}
+.pilihan a{
+	text-decoration: none;
+	color:#000000;
+	line-height:30px;
+}
+
+.pilihan:hover{
+	background-color:#ECECEC;
+	text-decoration: none;
+}
+
+.kanan{
+	width: 70%;
+	height:auto;
+	float: right;
+	text-align: left;
+	background-color:#FFFFFF;
+}
+.detail{
+	height:auto;
+	width: 90%;
+	position:relative;
+	margin:15px auto;
+	line-height:15px;
+}
+
+.detail input, textarea{
+	width:50%;
+	margin:-5px auto;
+	padding:3px auto;
+}
+
+.tinggi{
+	height:200px;
+	width:400px;
+}
+
+.detail button{
+	line-height:20px;
+	width:75px;
+	color:#FFFFFF;
+	margin-right:20px;
+	border:0px;
+}
+
+.batal{
+	background-color:#FF0004;
+}
+
+.simpan{
+	background-color:#0021E9;
+}
+
+.footer{
+	position:relative;
+	width:100%;
+	height:30px;
+	background-color: #0021E9;
+	left:0px;
+    bottom:0px;
+}
+
+.footer p{
+	right:20px;
+	color:#FFFFFF;
+	text-align:right;
+	line-height:30px;
+	margin-right:30px;
+	font-size:14px;
+}

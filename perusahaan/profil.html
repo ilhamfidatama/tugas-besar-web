@@ -1,0 +1,151 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<link href="perusahaan.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<div >
+    	<div class="logo">
+        	<img src="foto/logo.jpg" alt="lOker" width="150px">
+        </div>
+        <div class="menu">
+        	<table width="100%%" border="0" height="30px">
+  			<tbody valign="middle">
+    			<tr>
+      				<td align="left">
+      					<a href="profil.html"> Nama Perusahaan </a>
+      				</td>
+      				<td align="right">
+      					<a href="login.html"> Keluar </a>
+      				</td>
+    			</tr>
+  			</tbody>
+			</table>
+        </div>
+    </div>
+    <div>
+    	<div class="content">
+
+        <div class="kanan">
+          <div class="detail">
+          	<form method="post" action="pengaturan.php">
+            	<label>Profil Perusahaan</label>
+                <p>Nama Perusahaan :</p>
+                <input type="email" name="nama" required value="">
+                <p>Logo Perusahaan :</p>
+                <input type="file" name="logo" required value="">
+                <p>Tanggal Berdiri :</p>
+                <input type="date" name="tanggal_berdiri" required value="">
+                <p>No. Telepon :</p>
+                <input type="tel" name="telepon" required value="">
+                <p>Alamat Perusahaan :</p>
+                <textarea name="alamat_perusahaan" required value=""></textarea>
+                <p>Jenis Perusahaan :</p>
+                <select name="jenis" required>
+                	<option value="">pilih</option>
+                	<option value="Periklanan / Hubungan Masyarakat / Layanan Pemasaran">Periklanan / Hubungan Masyarakat / Layanan Pemasaran</option>
+                    <option value="Budidaya Pertanian">Budidaya Pertanian</option>
+                    <option value="Arsitektur / Bangunan / Konstruksi">Arsitektur / Bangunan / Konstruksi</option>
+                    <option value="Atletik / Olahraga">Atletik / Olahraga</option>
+                    <option value="Layanan Amal / Sosial / Organisasi Nirlaba">Layanan Amal / Sosial / Organisasi Nirlaba</option>
+                    <option value="Kimia / Plastik / Kertas / Petrokimia">Kimia / Plastik / Kertas / Petrokimia</option>
+                    <option value="Layanan Sipil (Pemerintah, Angkatan Bersenjata)">Layanan Sipil (Pemerintah, Angkatan Bersenjata)</option>
+                    <option value="Pakaian / Garmen / Tekstil">Pakaian / Garmen / Tekstil</option>
+                    <option value="Pendidikan">Pendidikan</option>
+                    <option value="Elektronik / Peralatan Listrik">Elektronik / Peralatan Listrik</option>
+                    <option value="Energi / Tenaga / Air / Minyak &amp; Gas / Pengelolaan Limbah">Energi / Tenaga / Air / Minyak &amp; Gas / Pengelolaan Limbah</option>
+                    <option value="Rekayasa - Bangunan, Sipil, Konstruksi / Survei Kuantitas">Rekayasa - Bangunan, Sipil, Konstruksi / Survei Kuantitas</option>
+                    <option value="Teknik - Listrik / Elektronik / Mekanis">Teknik - Listrik / Elektronik / Mekanis</option>
+                    <option value="Teknik - Lainnya">Teknik - Lainnya</option>
+                    <option value="Hiburan / Rekreasi">Hiburan / Rekreasi</option>
+                    <option value="Layanan Keuangan">Layanan Keuangan</option>
+                    <option value="Makanan dan Minuman / Katering">Makanan dan Minuman / Katering</option>
+                    <option value="Jasa Pengiriman Barang / Pengiriman / Pengiriman">Jasa Pengiriman Barang / Pengiriman / Pengiriman</option>
+                    <option value="Layanan Bisnis Umum">Layanan Bisnis Umum</option>
+                    <option value="Perawatan Kesehatan &amp; Kecantikan">Perawatan Kesehatan &amp; Kecantikan</option>
+                    <option value="Perhotelan / Katering">Perhotelan / Katering</option>
+                    <option value="Manajemen Sumber Daya Manusia / Konsultasi">Manajemen Sumber Daya Manusia / Konsultasi</option>
+                    <option value="Mesin Industri / Peralatan Otomatisasi">Mesin Industri / Peralatan Otomatisasi</option>
+                    <option value="Teknologi Informasi">Teknologi Informasi</option>
+                    <option value="Asuransi / Dana Pensiun">Asuransi / Dana Pensiun</option>
+                    <option value="Desain Interior / Desain Grafis">Desain Interior / Desain Grafis</option>
+                    <option value="Perhiasan / Permata / Jam Tangan">Perhiasan / Permata / Jam Tangan</option>
+                    <option value="Laboratorium">Laboratorium</option>
+                    <option value="Layanan Hukum">Layanan Hukum</option>
+                    <option value="Logistik">Logistik</option>
+                    <option value="Konsultasi / Layanan Manajemen">Konsultasi / Layanan Manajemen</option>
+                    <option value="Manufaktur">Manufaktur</option>
+                    <option value="Transportasi masal">Transportasi masal</option>
+                    <option value="Media / Penerbitan / Percetakan">Media / Penerbitan / Percetakan</option>
+                    <option value="Medis / Farmasi">Medis / Farmasi</option>
+                    <option value="Pertambangan">Pertambangan</option>
+                    <option value="Kelompok Industri Campuran">Kelompok Industri Campuran</option>
+                    <option value="Kendaraan bermotor">Kendaraan bermotor</option>
+                    <option value="Pengemasan">Pengemasan</option>
+                    <option value="Kinerja / Musik / Artistik">Kinerja / Musik / Artistik</option>
+                    <option value="Petroleum">Petroleum</option>
+                    <option value="Pengembangan properti">Pengembangan properti</option>
+                    <option value="Manajemen Properti / Konsultasi">Manajemen Properti / Konsultasi</option>
+                    <option value="Utilitas Publik">Utilitas Publik</option>
+                    <option value="Penelitian / Survei">Penelitian / Survei</option>
+                    <option value="Keamanan / Api / Kontrol Akses Elektronik">Keamanan / Api / Kontrol Akses Elektronik</option>
+                    <option value="Pengawalan Keamanan">Pengawalan Keamanan</option>
+                    <option value="Telekomunikasi">Telekomunikasi</option>
+                    <option value="Pariwisata / Agen Perjalanan">Pariwisata / Agen Perjalanan</option>
+                    <option value="Mainan">Mainan</option>
+                    <option value="Perdagangan dan Distribusi">Perdagangan dan Distribusi</option>
+                    <option value="Grosir / Eceran">Grosir / Eceran</option>
+                    <option value="Lainnya">Lainnya</option>
+                </select>
+                <p>Website :</p>
+                <input type="url" name="website" value="">
+                <p>Jumlah Pegawai :</p>
+                <input type="number" name="jumlah_pegawai" value="">
+                <p>Jam Kerja :</p>
+                <select name="jam_kerja" required>
+                	<option value="">pilih</option>
+                	<option value="6">6 jam</option>
+                    <option value="7">7 jam</option>
+                    <option value="8">8 jam</option>
+                    <option value="9">9 jam</option>
+                </select>
+                <p>Deskripsi Perusahaan :</p>
+                <textarea name="deskripsi" class="tinggi" required value=""></textarea>
+                <p>Visi Perusahaan :</p>
+                <textarea name="visi" class="tinggi" required value=""></textarea>
+                <p>Misi Perusahaan :</p>
+                <textarea name="misi" class="tinggi" required value=""></textarea>
+                <br><br>
+                <button class="batal" type="submit" name="batal" value="0">Batal</button>
+                <button class="simpan" type="submit" name="simpan" value="1">Simpan</button>
+            </form>
+          </div>
+         
+        </div>
+
+        <div class="kiri">
+		<div class="pilihan">
+          <a href="profil.html">Profil Perusahaan</a>
+        </div>
+        <div class="pilihan">
+          <a href="Manajemen.html">Manajemen Pekerja</a>
+       	</div>
+       	<div class="pilihan">
+          <a href="Pelamar.html">Pelamar</a>
+        </div>
+        <div class="pilihan">
+          <a href="Upload.html">Upload Lowongan</a>
+        </div>
+        <div class="pilihan">
+            <a href="Pengaturan.html">Pengaturan</a> 
+		</div>
+        </div>	
+    </div>
+</div>
+    <footer>
+        <p>Hak Cipta &copy;Informatika UNRAM </p>
+    </footer>
+</body>
+</html>
