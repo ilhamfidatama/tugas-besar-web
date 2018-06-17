@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Pengaturan</title>
+<title>Manajemen Pekerjaan</title>
 <link href="perusahaan.css" rel="stylesheet" type="text/css">
 </head>
 <body>
@@ -36,22 +36,26 @@
     			</ul>
             </nav>
             <article>
-            	<form name="pengaturan" method="post" action="pengaturan.php">
-            	<label>Pengaturan Akun</label>
-                <p>Email Utama :</p>
-                <input type="email" name="eutama" value="">
-                <p>Email Cadangan :</p>
-                <input type="email" name="ecadangan" value="">
-                <p>Kata Sandi Lama :</p>
-                <input type="password" name="kslama" value="">
-                <p>Kata Sandi Baru :</p>
-                <input type="password" name="ksbaru" minlength="8" value="">
-                <p>Ulangi Kata Sandi :</p>
-                <input type="password" name="ksulang" minlength="8" value="">
-                <br><br>
-                <button class="batal" type="submit" name="batal" value="0">Batal</button>
-                <button class="simpan" type="submit" name="simpan" value="1">Simpan</button>
-            </form>
+            	<h1>Manajemen Pekerjaan</h1>
+                <table class="daftar" width="100%" border="0" cellspacing="1px" cellpadding="1px">
+  					<tbody>
+    					<tr>
+      						<th width="5%">No</th>
+      						<th width="45%">Nama Lowongan</th>
+      						<th width="15%">Tanggal Posting</th>
+      						<th width="10%">Status</th>
+      						<th width="15%">Pilihan</th>
+    					</tr>
+                        <tr>
+                        	<td>1</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>edit/hapus</td>
+                        </tr>
+                        
+  					</tbody>
+				</table>
         	</article>
         </section>
         

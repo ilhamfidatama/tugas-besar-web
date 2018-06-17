@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Posting Pekerjaan</title>
+<link href="perusahaan.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+		<header>
+        	<div class="logo">
+        		<img src="../foto/logo.jpg" alt="lOker" width="150px">
+        	</div>
+        	<div class="menu">
+        	<table width="100%" border="0">
+  			<tbody valign="middle">
+    			<tr>
+      				<td align="left">
+      					<a href="../../coba/profil.html"> Nama Perusahaan </a>
+      				</td>
+      				<td align="right">
+      					<a href="../../coba/login.html"> Keluar </a>
+      				</td>
+    			</tr>
+  			</tbody>
+			</table>
+        	</div>
+        </header>
+		<section>
+        	<nav>
+            	<ul>
+      				<li><a href="ProfilPerusahaan.html">Profil Perusahaan</a></li>
+      				<li><a href="DaftarLowongan.html">Manajemen Pekerjaan</a></li>
+      				<li><a href="DaftarPelamar.html">Pelamar</a></li>
+                    <li><a href="PostingPekerjaan.html">Upload Lowongan</a></li>
+                    <li><a href="pengaturan.html">Pengaturan</a></li>
+    			</ul>
+            </nav>
+            <article>
+            	<form name="upload" method="post" action="posting.php">
+            	<label>Posting Lowongan</label>
+                <p>Judul Pekerjaan :</p>
+                <input type="text" name="judul" required value="">
+                <p>Posisi :</p>
+                <input type="text" name="posisi" required value="">
+                <p>Batas Melamar :</p>
+                <input type="date" name="batas" required value="">
+                <p>No. Jabatan :</p>
+                <input type="text" name="telepon" required value="">
+                <p>Gaji :</p>
+                <select name="gaji" required>
+                	<option value="">pilih gaji</option>
+                	<option value="Rp 500.000 s/d Rp 2.000.000">Rp 500.000 s/d Rp 2.000.000</option>
+                    <option value="Rp 2.100.000 s/d Rp 5.000.000">Rp 2.000.000 s/d Rp 5.000.000</option>
+                    <option value="Rp 5.100.000 s/d Rp 10.000.000">Rp 5.100.000 s/d Rp 10.000.000</option>
+                    <option value="Rp 10.100.000 s/d Rp 20.000.000">Rp 10.100.000 s/d Rp 20.000.000</option>
+                    <option value="Rp 20.100.000 s/d Rp 30.000.000">Rp 20.100.000 s/d Rp 30.000.000</option>
+                    <option value="Rp 30.100.000 s/d Rp 50.000.000">Rp 30.100.000 s/d Rp 50.000.000</option>
+                    <option value="Rp 50.100.000 s/d Rp 70.000.000">Rp 50.100.000 s/d Rp 70.000.000</option>
+                </select>
+                <p>Jumlah Pekerja yang Diterima :</p>
+                <input type="number" name="diterima" value="">
+                <p>Deskripsi Pekerjaan :</p>
+                <textarea name="deskripsi" minlength="200" required value=""></textarea>
+                <p>Persyaratan :</p>
+                <textarea name="visi" minlength="50" required value=""></textarea>
+                <br><br>
+                <button class="batal" type="submit" name="batal" value="0">Batal</button>
+                <button class="simpan" type="submit" name="posting" value="1">Posting</button>
+            </form>
+        	</article>
+        </section>
+        
+		<footer class="bawah" align="right"><p>Hak Cipta &copy;Informatika UNRAM</p></footer>
+</body>
+</html>

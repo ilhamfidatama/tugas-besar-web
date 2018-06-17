@@ -2,38 +2,44 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Untitled Document</title>
+<title>Edit Profil</title>
 <link href="perusahaan.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-	<div >
-    	<div class="logo">
-        	<img src="foto/logo.jpg" alt="lOker" width="150px">
-        </div>
-        <div class="menu">
-        	<table width="100%%" border="0" height="30px">
+		<header>
+        	<div class="logo">
+        		<img src="../foto/logo.jpg" alt="lOker" width="150px">
+        	</div>
+        	<div class="menu">
+        	<table width="100%" border="0">
   			<tbody valign="middle">
     			<tr>
       				<td align="left">
-      					<a href="profil.html"> Nama Perusahaan </a>
+      					<a href="../../coba/profil.html"> Nama Perusahaan </a>
       				</td>
       				<td align="right">
-      					<a href="login.html"> Keluar </a>
+      					<a href="../../coba/login.html"> Keluar </a>
       				</td>
     			</tr>
   			</tbody>
 			</table>
-        </div>
-    </div>
-    <div>
-    	<div class="content">
-
-        <div class="kanan">
-          <div class="detail">
-          	<form method="post" action="pengaturan.php">
+        	</div>
+        </header>
+		<section>
+        	<nav>
+            	<ul>
+      				<li><a href="ProfilPerusahaan.html">Profil Perusahaan</a></li>
+      				<li><a href="DaftarLowongan.html">Manajemen Pekerjaan</a></li>
+      				<li><a href="DaftarPelamar.html">Pelamar</a></li>
+                    <li><a href="PostingPekerjaan.html">Upload Lowongan</a></li>
+                    <li><a href="pengaturan.html">Pengaturan</a></li>
+    			</ul>
+            </nav>
+            <article>
+            	<form name="edit" method="post" action="profil.php">
             	<label>Profil Perusahaan</label>
                 <p>Nama Perusahaan :</p>
-                <input type="email" name="nama" required value="">
+                <input type="text" name="nama" required value="">
                 <p>Logo Perusahaan :</p>
                 <input type="file" name="logo" required value="">
                 <p>Tanggal Berdiri :</p>
@@ -41,7 +47,7 @@
                 <p>No. Telepon :</p>
                 <input type="tel" name="telepon" required value="">
                 <p>Alamat Perusahaan :</p>
-                <textarea name="alamat_perusahaan" required value=""></textarea>
+                <textarea name="alamat_perusahaan" minlength="20" required value=""></textarea>
                 <p>Jenis Perusahaan :</p>
                 <select name="jenis" required>
                 	<option value="">pilih</option>
@@ -112,40 +118,18 @@
                     <option value="9">9 jam</option>
                 </select>
                 <p>Deskripsi Perusahaan :</p>
-                <textarea name="deskripsi" class="tinggi" required value=""></textarea>
+                <textarea name="deskripsi" minlength="200" required value=""></textarea>
                 <p>Visi Perusahaan :</p>
-                <textarea name="visi" class="tinggi" required value=""></textarea>
+                <textarea name="visi" minlength="50" required value=""></textarea>
                 <p>Misi Perusahaan :</p>
-                <textarea name="misi" class="tinggi" required value=""></textarea>
-                <br><br>
+                <textarea name="misi" minlength="50" required value=""></textarea>
+                <br>
                 <button class="batal" type="submit" name="batal" value="0">Batal</button>
                 <button class="simpan" type="submit" name="simpan" value="1">Simpan</button>
             </form>
-          </div>
-         
-        </div>
-
-        <div class="kiri">
-		<div class="pilihan">
-          <a href="profil.html">Profil Perusahaan</a>
-        </div>
-        <div class="pilihan">
-          <a href="Manajemen.html">Manajemen Pekerja</a>
-       	</div>
-       	<div class="pilihan">
-          <a href="Pelamar.html">Pelamar</a>
-        </div>
-        <div class="pilihan">
-          <a href="Upload.html">Upload Lowongan</a>
-        </div>
-        <div class="pilihan">
-            <a href="Pengaturan.html">Pengaturan</a> 
-		</div>
-        </div>	
-    </div>
-</div>
-    <footer>
-        <p>Hak Cipta &copy;Informatika UNRAM </p>
-    </footer>
+        	</article>
+        </section>
+        
+		<footer class="bawah" align="right"><p>Hak Cipta &copy;Informatika UNRAM</p></footer>
 </body>
 </html>

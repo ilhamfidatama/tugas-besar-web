@@ -1,5 +1,20 @@
 done :
+html
 pengaturan
+edit profil
+ProfilPerusahaan
+PostingPekerjaan
+daftar lowongan dengan pelamar
+manajemen pekerjaan
+daftar pelamar pada lowongan
+detail pelamar
+login
+register
 
-not finish :
-profil
+pending :
+php
+posting.php untuk halaman posting pekerjaan
+pengaturan.php untuk halaman pengaturan
+profil untuk halaman edit profil
+daftar.php untuk halaman daftar
+masuk.php untuk halaman masuk

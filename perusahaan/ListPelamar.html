@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Pengaturan</title>
+<title>Daftar Pelamar</title>
 <link href="perusahaan.css" rel="stylesheet" type="text/css">
 </head>
 <body>
@@ -36,22 +36,29 @@
     			</ul>
             </nav>
             <article>
-            	<form name="pengaturan" method="post" action="pengaturan.php">
-            	<label>Pengaturan Akun</label>
-                <p>Email Utama :</p>
-                <input type="email" name="eutama" value="">
-                <p>Email Cadangan :</p>
-                <input type="email" name="ecadangan" value="">
-                <p>Kata Sandi Lama :</p>
-                <input type="password" name="kslama" value="">
-                <p>Kata Sandi Baru :</p>
-                <input type="password" name="ksbaru" minlength="8" value="">
-                <p>Ulangi Kata Sandi :</p>
-                <input type="password" name="ksulang" minlength="8" value="">
-                <br><br>
-                <button class="batal" type="submit" name="batal" value="0">Batal</button>
-                <button class="simpan" type="submit" name="simpan" value="1">Simpan</button>
-            </form>
+            	<h1>Judul Lowongan Pekerjaan</h1>
+                <table class="daftar" width="100%" border="0" cellspacing="1px" cellpadding="1px">
+  					<tbody>
+    					<tr>
+      						<th width="5%">No</th>
+      						<th width="45%">Nama Pelamar</th>
+      						<th width="15%">Tanggal Melamar</th>
+      						<th width="10%">Umur</th>
+      						<th width="15%">Detail</th>
+    					</tr>
+                        <tr>
+                        	<td>1</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>
+                            	<form name="detailPelamar" method="post" action="datailPelamar.php">
+                                	<button name="detail" type="submit" value="1">Detail</button>
+                                </form>
+                            </td>
+                        </tr>
+  					</tbody>
+				</table>
         	</article>
         </section>
         
