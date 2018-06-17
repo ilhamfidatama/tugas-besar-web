@@ -1,0 +1,24 @@
+selesai :
+html
+
+php
+
+javascript
+
+proses :
+
+
+pending :
+html
+daftar.html
+masuk.html
+Beranda.html
+Carilowongan.html
+ProfilePendidikan.html
+ProfilePengalaman.html
+ProfileKeterampilan.html
+ProfileBahasa.html
+DeskripsiPekerjaan.html
+PanduanMencariPekerjaan.html
+PengaturanPelamar.html
+RiwayatPelamar.html
