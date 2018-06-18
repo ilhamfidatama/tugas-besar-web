@@ -2,128 +2,50 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Untitled Document</title>
+<title>Profil</title>
+<link href="Pelamar.css" rel="stylesheet" type="text/css">
 <link href="profil.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-	<div class="header">
-    	<div class="logo">
-        	<img src="logo.jpg" alt="lOker" width="150px">
-        </div>
-        <div class="menu">
-        	<table width="100%" border="0" height="30px">
-  			<tbody valign="middle">
-    			<tr>
-      				<td align="left">
-      					<a href="beranda.html"> Beranda </a>
-        				<a href="cari lowongan.html"> Cari Lowongan </a>
-      				</td>
-      				<td align="right">
-      					<a href="login.html"> Keluar </a>
-      				</td>
-    			</tr>
-  			</tbody>
-			</table>
-        </div>
-    </div>
-    <div class="main">
-    	<div class="profil">
-        	<div class="kiri">
-        		<div class="identitas">
-                	<img src="profil.jpg" width="70px" height="70px" alt="foto profil">
-                	<p> Muhammad Ilham Fidatama </p>
-                </div>
-                <div class="sub">
-                	<div class="subProfil">
-                    	<p><a href="profil.html">Biodata Pribadi</a></p>
-                    </div>
-				</div>
-                <div class="sub">                    
-                    <div class="subProfil">
-                    	<p><a href="unggah.html">Unggah CV</a></p>
-                    </div>
-                </div>
-        </div>
-        	<div class="kanan">
-            	<div class="biodata">
-                	<h1> BIODATA PRIBADI </h1>
-                    <div class="formulir">
-                    	<form method="post" action="">
-                        	<table width="100%" border="0" cellspacing="2px" cellpadding="10px">
-  							<tbody>
-    							<tr>
-      								<td width="30%">Username</td>
-      								<td width="1%">:</td>
-      								<td width="69%">
-                                    	<input class="username" type="text" placeholder="username" value="" name="username" readonly>
-                                    </td>
-    							</tr>
-                                <tr>
-      								<td width="30%">E-mail</td>
-      								<td width="1%">:</td>
-      								<td width="69%">
-                                    	<input class="username" type="email" placeholder="email" value="" name="email">
-                                    </td>
-    							</tr>
-                                <tr>
-      								<td width="30%">Nama Lengkap</td>
-      								<td width="1%">:</td>
-      								<td width="69%">
-                                    	<input class="username" type="text" placeholder="nama lengkap" value="" name="namaLengkap">
-                                    </td>
-    							</tr>
-                                <tr>
-      								<td width="30%">Jenis Kelamin</td>
-      								<td width="1%">:</td>
-      								<td width="69%">
-                                    	<select name="JK">
-                                        	<option value="Laki-laki">Laki-laki</option>
-                                        	<option value="Perempuan">Perempuan</option>
-                                        </select>
-                                    </td>
-    							</tr>
-                                <tr>
-      								<td width="30%">Tanggal lahir</td>
-      								<td width="1%">:</td>
-      								<td width="69%">
-                                    	
-                                    </td>
-    							</tr>
-                                <tr>
-      								<td width="30%">Status</td>
-      								<td width="1%">:</td>
-      								<td width="69%">
-                                    	<select name="status">
-                                        	<option value="">Status</option>
-                                        	<option value="Lajang">Lajang</option>
-                                        	<option value="Menikah">Menikah</option>
-                                        </select>
-                                    </td>
-    							</tr>
-                                <tr>
-      								<td width="30%">No.HP</td>
-      								<td width="1%">:</td>
-      								<td width="69%">
-                                    	<input class="username" type="text" placeholder="no.hp" value="" name="hp">
-                                    </td>
-    							</tr>
-                                <tr>
-      								<td width="30%">Alamat</td>
-      								<td width="1%">:</td>
-      								<td width="69%">
-                                    	<input class="username" type="text" placeholder="alamat" value="" name="alamat">
-                                    </td>
-    							</tr>
-  							</tbody>
-							</table>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="footer">
-        <p>Hak Cipta &copy;Informatika UNRAM </p>
-    </div>
+		<header>
+        	<div class="logo">
+        		<img src="../foto/logo.jpg" alt="lOker" width="150px">
+        	</div>
+            <nav>
+            	<ul>
+                	<li><a href="beranda.html">Beranda</a></li>
+                    <li><a href="CariLowongan.html">Cari Lowongan</a></li>
+                    <li><a href="ProfilPelamar.html">Profil</a></li>
+                    <li><a href="Riwayat.html">Riwayat</a></li>
+                    <li id="menuKanan"><a href="awal.html">Keluar</a></li>
+                </ul>
+            </nav>
+        </header>
+		<section>
+        	<nav id="profil">
+            	<table border="0" cellpadding="1" cellspacing="1" width="100%">
+                	<tbody>
+                    	<tr>
+                        	<td width="30%" align="center" valign="middle">
+                            	<img id="foto" alt="foto profil" width="60px" height="60px">
+                            </td>
+                            <th id="namaLengkap" align="left"></th>
+                        </tr>
+                    </tbody>
+                </table>
+                <hr>
+                <ul>
+                	<li><a href="ProfilPelamar.html">Profil Saya</a></li>
+                    <li><a href="ProfilPengalaman.html">Pengalaman</a></li>
+                    <li><a href="ProfilPendidikan.html">Pendidikan</a></li>
+                    <li><a href="ProfilKeterampilan.html">Keterampilan</a></li>
+                    <li><a href="ProfilResume.html">Resume</a></li>
+                    <li><a href="Pengaturan.html">Pengaturan Privasi</a></li>
+                </ul>
+            </nav>
+            <article id="kanan">
+            </article>
+        </section>
+		<footer class="bawah" align="right"><p>Hak Cipta &copy;Informatika UNRAM</p></footer>
 </body>
 </html>

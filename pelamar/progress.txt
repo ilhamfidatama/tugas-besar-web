@@ -1,17 +1,20 @@
 selesai :
 html
+daftar.html
+masuk.html
 
 php
 
 javascript
 
 proses :
+html
+beranda
+profil
 
 
 pending :
 html
-daftar.html
-masuk.html
 Beranda.html
 Carilowongan.html
 ProfilePendidikan.html
