@@ -11,11 +11,11 @@
 			session_start();
 			$_SESSION['akun']=$username;
 			echo"berhasil ".$username;
-			//header('location:ProfilPerusahaan.php');
+			header('location:ProfilPerusahaan.php');
 		}
 		else{
 			echo"gagal";
-			//header('location:masuk.html');
+			header('location:masuk.html');
 		}
 		mysqli_close($conn);
 	}
