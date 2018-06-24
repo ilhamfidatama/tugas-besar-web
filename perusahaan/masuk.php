@@ -1,6 +1,5 @@
 <html> <body>
 <?php
-	session_start();
 	$username=$_POST['username'];
 	$pass=$_POST['password'];
 	$conn=mysqli_connect("localhost", "root", "", "lope");
@@ -9,8 +8,9 @@
 		$baris=mysqli_fetch_row($user_db);
 		list($user,$pas)=$baris;
 		if($user==$username and $pas==$pass){
-			$_SESSION['user']='perusahaan1';
-			echo"berhasil ".$SESSION['user'];
+			session_start();
+			$_SESSION['akun']=$username;
+			echo"berhasil ".$username;
 			//header('location:ProfilPerusahaan.php');
 		}
 		else{
