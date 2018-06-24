@@ -36,36 +36,35 @@
                         </tr>
                     </tbody>
                 </table>
-                <form name="editPelamar" method="post" action="EditPelamar.php">
+                <form name="editPelamar" id="edit" method="post" action="EditPelamar.php">
                 	<button type="submit" name="edit" value="1">Edit Profil</button>
                 </form>
             </nav>
-            <!--<article>
-            	<table border="0" width="100%" cellpadding="1" cellspacing="1">
-                	<tbody>
-                    <tr>
-                    	<th id="judul" width="60%" align="left">judul</th>
-                        <td rowspan="4"></td>
-                    </tr>
-                    <tr>
-                        <td id="namaPerusahaan">nama perusahaan</td>
-                    </tr>
-                    <tr>
-                        <td id="kota">kota</td>
-                    </tr>
-                    <tr>
-                        <td id="gaji">gaji</td>
-                    </tr>
-                    </tbody>
-                </table>
-            </article>-->
             <?php  
 				$colors = array("red", "green", "blue", "yellow"); 
 
 				foreach ($colors as $value) {
-  					echo "
-						<article>$value</article>
-					";
+  					echo '
+						<article id="kiri">
+            				<table border="0" width="100%" cellpadding="1" cellspacing="1">
+                				<tbody>
+                    				<tr>
+                    					<th id="judul" width="60%" align="left">judul</th>
+                        				<td rowspan="4"></td>
+                    				</tr>
+                    				<tr>
+                        				<td id="namaPerusahaan">nama perusahaan</td>
+                    				</tr>
+                    				<tr>
+                        				<td id="kota">kota</td>
+                    				</tr>
+                    				<tr>
+                        				<td id="gaji">gaji</td>
+                    				</tr>
+                    			</tbody>
+                			</table>
+            			</article>
+					';
 				}
 			?> 
         </section>

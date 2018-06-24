@@ -26,7 +26,7 @@
         </header>
 		<section>
             <article>
-            	<form method="post" action="masuk.php">
+            	<form method="post" action="pengaturan.html">
                 	<legend align="center">Masuk Perusahaan</legend>
                     <input name="username" type="text" placeholder="Masukkan Username">
                     <input name="password" type="password" minlength="6" placeholder="Masukkan Kata Sandi">

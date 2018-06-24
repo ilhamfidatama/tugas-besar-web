@@ -1,0 +1,197 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Cari Lowongan</title>
+<link href="Pelamar.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+		<header>
+        	<div class="logo">
+        		<img src="../foto/logo.jpg" alt="lOker" width="150px">
+        	</div>
+            <nav>
+            	<ul>
+                	<li><a href="beranda.html">Beranda</a></li>
+                    <li><a href="CariLowongan.html">Cari Lowongan</a></li>
+                    <li><a href="ProfilPelamar.html">Profil</a></li>
+                    <li><a href="Riwayat.html">Riwayat</a></li>
+                    <li id="menuKanan"><a href="awal.html">Keluar</a></li>
+                </ul>
+            </nav>
+        </header>
+		<section>
+        	<nav id="pencarian">
+            	<form name="pencarian" id="cari" method="post" action="CariLowongan.php">
+                	<select name="spesisialisasiP" id="spesisialisasiP">
+						<option value="0">Semua spesialisasi</option>
+						<optgroup label="Akuntansi/Keuangan">
+							<option value="130">Audit &amp; Pajak</option>
+							<option value="135">Perbankan/Keuangan</option>
+							<option value="132">Keuangan/Investasi</option>
+							<option value="131">Akuntansi Umum/Pembiayaan</option>
+						</optgroup>
+							<optgroup label="Adminstrasi/Personalia">
+							<option value="133">Staf/Administrasi umum</option>
+							<option value="137">Personalia</option>
+							<option value="146">Sekretaris</option>
+							<option value="148">Manajemen Atas</option>
+						</optgroup>
+						<optgroup label="Seni/Media/Komunikasi">
+							<option value="100">Periklanan</option>
+							<option value="101">Seni/Desain Kreatif</option>
+							<option value="106">Hiburan/Seni Panggung</option>
+							<option value="141">Hubungan Masyarakat</option>
+						</optgroup>
+						<optgroup label="Bangunan/Konstruksi">
+							<option value="180">Arsitek/Desain Interior</option>
+							<option value="184">Sipil/Konstruksi Bangunan</option>
+							<option value="150">Properti/Real Estate</option>
+							<option value="198">Survei Kuantitas</option>
+						</optgroup>
+						<optgroup label="Komputer/IT">
+							<option value="192">IT-Perangkat Keras</option>
+							<option value="193">IT-Jaringan/Sistem/Sistem Database</option>
+							<option value="191">IT-Perangkat Lunak</option>
+						</optgroup>
+						<optgroup label="Pendidikan/Pelatihan">
+							<option value="105">Pendidikan</option>
+							<option value="121">Penelitian &amp; Pengembangan</option>
+						</optgroup>
+						<optgroup label="Teknik">
+							<option value="185">Teknik Kimia</option>
+							<option value="187">Teknik Elektrikal</option>
+							<option value="186">Teknik Elektro</option>
+							<option value="189">Teknik Lingkungan</option>
+							<option value="200">Teknik</option>
+							<option value="195">Mekanik/Otomotif</option>
+							<option value="190">Teknik Perminyakan</option>
+							<option value="188">Teknik Lainnya</option>
+						</optgroup>
+						<optgroup label="Kesehatan">
+							<option value="113">Dokter/Diagnosa</option>
+							<option value="112">Farmasi</option>
+							<option value="111">Praktisi/Asisten Medis</option>
+						</optgroup>
+						<optgroup label="Hotel/Restoran">
+							<option value="107">Makanan/Minuman/Pelayanan Restoran</option>
+							<option value="114">Hotel/Pariwisata</option>
+						</optgroup>
+						<optgroup label="Manufaktur">
+							<option value="115">Pemeliharaan</option>
+							<option value="194">Manufaktur</option>
+							<option value="196">Kontrol Proses</option>
+							<option value="140">Pembelian/Manajemen Material</option>
+							<option value="197">Penjaminan Kualitas / QA</option>
+						</optgroup>
+						<optgroup label="Penjualan/Marketing">
+							<option value="202">E-commerce</option>
+							<option value="142">Penjualan - Korporasi</option>
+							<option value="203">Digital Marketing</option>
+							<option value="139">Pemasaran/Pengembangan Bisnis</option>
+							<option value="149">Merchandising</option>
+							<option value="145">Penjualan Ritel</option>
+							<option value="143">Penjualan - Teknik/Teknikal/IT</option>
+							<option value="144">Proses desain dan kontrol</option>
+							<option value="151">Tele-sales/Telemarketing</option>
+						</optgroup>
+						<optgroup label="Ilmu Pengetahuan">
+							<option value="103">Aktuaria/Statistik</option>
+							<option value="102">Pertanian</option>
+							<option value="181">Penerbangan</option>
+							<option value="182">Bioteknologi</option>
+							<option value="183">Kimia</option>
+							<option value="108">Teknologi Makanan/Ahli Gizi</option>
+							<option value="109">Geologi/Geofisika</option>
+							<option value="199">Ilmu Pengetahuan &amp; Teknologi/Lab</option>
+						</optgroup>
+						<optgroup label="Pelayanan">
+							<option value="119">Keamanan / Angkatan Bersenjata</option>
+							<option value="134">Pelayanan Pelanggan</option>
+							<option value="147">Logistik/Jaringan distribusi</option>
+							<option value="138">Hukum / Legal</option>
+							<option value="118">Perawatan Kesehatan / Kecantikan</option>
+							<option value="120">Pelayanan kemasyarakatan</option>
+							<option value="152">Teknikal &amp; Bantuan Pelanggan</option>
+						</optgroup>
+						<optgroup label="Lainnya">
+							<option value="110">Pekerjaan Umum</option>
+							<option value="104">Jurnalis/Editor</option><option value="117">Penerbitan</option>
+							<option value="116">Lainnya/Kategori tidak tersedia</option>
+						</optgroup>
+					</select> <!--pilihan untuk spesialisasi-->
+                    <select name="lokasi" id="lokasi">
+                    	<option value="0" >Semua Lokasi</option>
+						<option value="30100" >Aceh</option>
+						<option value="30200">Bali</option>
+						<option value="32800">Bangka Belitung</option>
+						<option value="32900">Banten</option>
+						<option value="30300">Bengkulu</option>
+						<option value="33000">Gorontalo</option>
+						<option value="30500">Jakarta Raya</option>
+						<option value="30600">Jambi</option>
+						<option value="30700">Jawa Barat</option>
+						<option value="30800">Jawa Tengah</option>
+						<option value="30900">Jawa Timur</option>
+						<option value="31000">Kalimantan Barat</option>
+						<option value="31100">Kalimantan Selatan</option>
+						<option value="31200">Kalimantan Tengah</option>
+						<option value="31300">Kalimantan Timur</option>
+						<option value="33500">Kalimantan Utara</option>
+						<option value="33200">Kepulauan Riau</option>
+						<option value="31400">Lampung</option>
+						<option value="31500">Maluku</option>
+						<option value="33100">Maluku Utara</option>
+						<option value="31600">Nusa Tenggara Barat</option>
+						<option value="31700">Nusa Tenggara Timur</option>
+						<option value="30400">Papua</option>
+						<option value="33300">Papua Barat</option>
+						<option value="31800">Riau</option>
+						<option value="33400">Sulawesi Barat</option>
+						<option value="31900">Sulawesi Selatan</option>
+						<option value="32000">Sulawesi Tengah</option>
+						<option value="32100">Sulawesi Tenggara</option>
+						<option value="32200">Sulawesi Utara</option>
+						<option value="32300">Sumatera Barat</option>
+						<option value="32400">Sumatera Selatan</option>
+						<option value="32500">Sumatera Utara</option>
+						<option value="32700">Yogyakarta</option>
+					</select> <!--pilihan untuk lokasi-->
+                    <!--pilihan untuk rentang gaji-->
+                    <button type="submit" name="cari" value="1">Cari Lowongan</button>
+                </form>
+            </nav>
+            <article id="kiri">
+            	<table border="0" width="100%" cellpadding="1" cellspacing="1">
+                	<tbody>
+                    <tr>
+                    	<th id="judul" width="60%" align="left">judul</th>
+                        <td rowspan="4"></td>
+                    </tr>
+                    <tr>
+                        <td id="namaPerusahaan">nama perusahaan</td>
+                    </tr>
+                    <tr>
+                        <td id="kota">kota</td>
+                    </tr>
+                    <tr>
+                        <td id="gaji">gaji</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </article>
+            <article id="kanan">
+            	<img alt="Foto Profil" width="90px" height="90px">
+                <img alt="Foto Profil" width="90px" height="90px">
+                <img alt="Foto Profil" width="90px" height="90px">
+                <img alt="Foto Profil" width="90px" height="90px">
+                <img alt="Foto Profil" width="90px" height="90px">
+                <img alt="Foto Profil" width="90px" height="90px">
+                <img alt="Foto Profil" width="90px" height="90px">
+                <img alt="Foto Profil" width="90px" height="90px">
+            </article>
+        </section>
+        
+		<footer class="bawah" align="right"><p>Hak Cipta &copy;Informatika UNRAM</p></footer>
+</body>
+</html>

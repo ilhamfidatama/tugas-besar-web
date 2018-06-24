@@ -10,12 +10,11 @@ javascript
 proses :
 html
 beranda
-profil
+ProfilPelamar
 
 
 pending :
 html
-Beranda.html
 Carilowongan.html
 ProfilePendidikan.html
 ProfilePengalaman.html
