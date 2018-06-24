@@ -39,7 +39,7 @@
 				session_start();
 				$username=$_SESSION['akun'];
 				$conn=mysqli_connect("localhost", "root", "", "lope");
-				$user_db=mysqli_query($conn, "select email, npwp, alamat_perusahaan, nama_perusahaan, area, tanggal_terdaftar, bidang, deskripsi, visi, misi, jmlh_pegawai website from perusahaan where username='$username'");
+				$user_db=mysqli_query($conn, "select email, npwp, alamat_perusahaan, nama_perusahaan, area, tanggal_terdaftar, bidang, deskripsi, visi, misi, jmlh_pegawai, website from perusahaan where username='$username'");
 				$baris=mysqli_fetch_row($user_db);
 				list($email, $npwp, $alamat, $nama, $area, $tanggal, $bidang, $deskripsi, $visi, $misi, $pegawai, $website)=$baris;
             	echo'<h1>Profil '.$nama.' </h1>';
