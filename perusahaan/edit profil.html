@@ -36,20 +36,20 @@
     			</ul>
             </nav>
             <article>
-            	<form name="edit" method="post" action="profil.php">
+            	<form name="edit" method="post" action="edit.php">
             	<label>Profil Perusahaan</label>
                 <p>Nama Perusahaan :</p>
-                <input type="text" name="nama" required value="">
+                <input type="text" name="nama" value="">
                 <p>Logo Perusahaan :</p>
-                <input type="file" name="logo" required value="">
+                <input type="file" name="logo" value="">
                 <p>Tanggal Berdiri :</p>
-                <input type="date" name="tanggal_berdiri" required value="">
+                <input type="date" name="tanggal_berdiri" value="">
                 <p>No. Telepon :</p>
-                <input type="tel" name="telepon" required value="">
+                <input type="tel" name="telepon" value="">
                 <p>Alamat Perusahaan :</p>
-                <textarea name="alamat_perusahaan" minlength="20" required value=""></textarea>
+                <textarea name="alamat_perusahaan" minlength="20" value=""></textarea>
                 <p>Jenis Perusahaan :</p>
-                <select name="jenis" required>
+                <select name="jenis">
                 	<option value="">pilih</option>
                 	<option value="Periklanan / Hubungan Masyarakat / Layanan Pemasaran">Periklanan / Hubungan Masyarakat / Layanan Pemasaran</option>
                     <option value="Budidaya Pertanian">Budidaya Pertanian</option>
@@ -118,13 +118,13 @@
                     <option value="9">9 jam</option>
                 </select>
                 <p>Deskripsi Perusahaan :</p>
-                <textarea name="deskripsi" minlength="200" required value=""></textarea>
+                <textarea name="deskripsi" minlength="200" value=""></textarea>
                 <p>Visi Perusahaan :</p>
-                <textarea name="visi" minlength="50" required value=""></textarea>
+                <textarea name="visi" minlength="50" value=""></textarea>
                 <p>Misi Perusahaan :</p>
-                <textarea name="misi" minlength="50" required value=""></textarea>
+                <textarea name="misi" minlength="50" value=""></textarea>
                 <br>
-                <button class="batal" type="submit" name="batal" value="0">Batal</button>
+                <button class="batal" type="submit" name="simpan" value="0">Batal</button>
                 <button class="simpan" type="submit" name="simpan" value="1">Simpan</button>
             </form>
         	</article>
