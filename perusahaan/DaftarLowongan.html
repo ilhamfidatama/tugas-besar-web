@@ -37,7 +37,7 @@
             </nav>
             <article>
             	<h1>Manajemen Pekerjaan</h1>
-                <table class="daftar" width="100%" border="0" cellspacing="1px" cellpadding="1px">
+                <table class="daftar" width="100%" border="1" cellspacing="1px" cellpadding="1px">
   					<tbody>
     					<tr>
       						<th width="5%">No</th>
@@ -51,7 +51,12 @@
                             <td></td>
                             <td></td>
                             <td></td>
-                            <td>edit/hapus</td>
+                            <td>
+                            	<form id="kelola" method="POST" action="kelolaLowongan.php">
+                      <button type="submit" name="kelola" value="0" style="background-color:#F44B4B; width:60px; border-collapse:collapse; border:0;">Hapus</button>
+                      <button type="submit" name="kelola" value="1" style="background-color:#57FF5B; width:60px; border-collapse:collapse; border:0;">Simpan</button>
+                    </form>
+                            </td>
                         </tr>
                         
   					</tbody>

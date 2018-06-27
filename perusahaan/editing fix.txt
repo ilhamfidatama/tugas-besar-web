@@ -11,6 +11,15 @@ detail pelamar
 login
 register
 
+php
+edit profil.php
+profilperusahaan.php
+masuk.php
+daftar.php
+keluar.php
+daftarLowongan.php (tinggal buat edit lowongannya)
+tahun-bulan-tanggal jam:menit:detik
+
 pending :
 php
 posting.php untuk halaman posting pekerjaan

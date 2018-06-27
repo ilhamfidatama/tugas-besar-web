@@ -9,9 +9,9 @@
 	session_start();
 	$username=$_SESSION['akun'];
 	$conn=mysqli_connect("localhost", "root", "", "lope");
-	$user_db=mysqli_query($conn, "select email, npwp, alamat_perusahaan, nama_perusahaan, area, tanggal_terdaftar, bidang, deskripsi, visi, misi, jmlh_pegawai, website, no_telpon, jam_kerja from perusahaan where username='$username'");
+	$user_db=mysqli_query($conn, "select email, npwp, alamat_perusahaan, nama_perusahaan, area, tanggal_terdaftar, bidang, deskripsi, visi, misi, jmlh_pegawai, website, no_telpon, jam_kerja, foto_perusahaan from perusahaan where username='$username'");
 	$baris=mysqli_fetch_row($user_db);
-	list($email, $npwp, $alamat, $nama, $area, $tanggal, $bidang, $deskripsi, $visi, $misi, $pegawai, $website, $telpon, $kerja)=$baris;
+	list($email, $npwp, $alamat, $nama, $area, $tanggal, $bidang, $deskripsi, $visi, $misi, $pegawai, $website, $telpon, $kerja, $gambar)=$baris;
   ?>
 		<header>
         	<div class="logo">
@@ -35,11 +35,11 @@
 		<section>
         	<nav>
             	<ul>
-      				  <li><a href="ProfilPerusahaan.html">Profil Perusahaan</a></li>
-      				  <li><a href="DaftarLowongan.html">Manajemen Pekerjaan</a></li>
-      				  <li><a href="DaftarPelamar.html">Pelamar</a></li>
-                <li><a href="PostingPekerjaan.html">Upload Lowongan</a></li>
-                <li><a href="pengaturan.html">Pengaturan</a></li>
+      				  <li><a href="ProfilPerusahaan.php">Profil Perusahaan</a></li>
+      				  <li><a href="DaftarLowongan.php">Manajemen Pekerjaan</a></li>
+      				  <li><a href="DaftarPelamar.php">Pelamar</a></li>
+                <li><a href="PostingPekerjaan.php">Upload Lowongan</a></li>
+                <li><a href="pengaturan.php">Pengaturan</a></li>
     			   </ul>
           </nav>
           <article>
@@ -51,8 +51,8 @@
                       <td width="30%">Nama Perusahaan</td>
                       <td width="3px">:</td>
                       <td id="nama" width="50%"><?php echo$nama; ?></td>
-                      <td rowspan="5" bordercolor="#000000" align="center">
-                        <img id="foto" alt="foto profil" height="150px" width="150px" title="foto profil">
+                      <td rowspan="5" bordercolor="#000000" align="center" id="gambar">
+                        <img id="foto" alt="foto profil" height="150px" width="150px" src="img/<?=$gambar; ?>">
                       </td>
     						</tr>
                             <tr>
@@ -73,52 +73,63 @@
                             <tr>
       							<td width="30%">Ukuran Perusahaan</td>
       							<td width="3px">:</td>
-      							<td id="alamat"> <?php echo$pegawai; ?> </td>
+      							<td id="alamat"><?php echo$pegawai; ?></td>
     						</tr>
                             <tr>
       							<td width="30%">Jenis Perusahaan</td>
       							<td width="3px">:</td>
-      							<td id="jenis"> <?php echo$bidang; ?> </td>
+      							<td id="jenis"><?php echo$bidang; ?></td>
                                 <td>
                                 	<form class="edit" name="edit" method="post" action="edit profil.php">
                                     	<button name="editProfil" type="submit" value="1">Edit Profil</button>
                                     </form>
                                 </td>
     						</tr>
+                <tr>
+                    <td width="30%">Area</td>
+                    <td width="3px">:</td>
+                    <td id="website"><?= $area; ?></td>
+                </tr>
                             <tr>
       							<td width="30%">Website</td>
       							<td width="3px">:</td>
-      							<td id="website"> <?php echo$website; ?> </td>
+      							<td id="website"><?php echo$website; ?></td>
     						</tr>
+                <tr>
+                    <td width="30%">Email</td>
+                    <td width="3px">:</td>
+                    <td id="website"><?php echo$email; ?></td>
+                </tr>
 							<tr>
       							<td width="30%">Waktu Bekerja</td>
       							<td width="3px">:</td>
-      							<td id="website"> <?php echo$kerja; ?> </td>
+      							<td id="website"><?php echo$kerja; ?></td>
     						</tr>
                             <tr>
       							<td width="30%">Alamat Perusahaan</td>
       							<td width="3px">:</td>
-      							<td id="ukuran"> <?php echo$alamat; ?> </td>
+      							<td id="ukuran"><?php echo$alamat; ?></td>
     						</tr>
                             <tr>
       							<td width="30%">Deskripsi Perusahaan</td>
       							<td width="3px">:</td>
-      							<td id="deskripsi" colspan="2"> <?php echo$deskripsi; ?> </td>
+      							<td id="deskripsi" colspan="2"><?php echo$deskripsi; ?></td>
     						</tr>
                             <tr>
       							<td width="30%">Visi Perusahaan</td>
       							<td width="3px">:</td>
-      							<td id="visi" colspan="2"> <?php echo$visi; ?> </td>
+      							<td id="visi" colspan="2"><?php echo$visi; ?></td>
     						</tr>
                             <tr>
       							<td width="30%">Misi Perusahaan</td>
       							<td width="3px">:</td>
-      							<td id="misi" colspan="2"> <?php echo$misi; ?> </td>
+      							<td id="misi" colspan="2"><?php echo$misi; ?></td>
     						</tr>
   						</tbody>
 					</table>
                 </div>
-				<?php mysqli_close($conn); ?>
+				<?php 
+          mysqli_close($conn);
 				?>
         	</article>
         </section>

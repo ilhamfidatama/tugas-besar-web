@@ -38,7 +38,7 @@ header {
 
 section{
 	width:90%;
-	min-height:483px;
+	min-height:580px;
 	margin:10px auto;
 }
 
@@ -140,7 +140,10 @@ article textarea{
 }
 
 article button{
-	margin:auto 5px;
+	margin-top:10px;
+	margin-right:10px;
+	margin-bottom:0px;
+	margin-left:0px;
 	width:70px;
 	height:30px;
 }
