@@ -1,3 +1,13 @@
+<?php
+    require 'tambahan.php';
+    session_start();
+    $pelamar=$_SESSION['pelamar'];
+    $id_lowongan=$_GET['id'];
+    $lowongan = ambils("SELECT * FROM lowongan WHERE id_lowongan='$id_lowongan' ")[0];
+    $username_perusahaan = $lowongan['username_perusahaan'];
+    $perusahaan = ambils("SELECT * FROM perusahaan WHERE username='$username_perusahaan' ")[0];
+?>
+
 <!doctype html>
 <html>
 <head>
@@ -12,29 +22,27 @@
         	</div>
             <nav>
             	<ul>
-                	<li><a href="beranda.html">Beranda</a></li>
-                    <li><a href="CariLowongan.html">Cari Lowongan</a></li>
-                    <li><a href="ProfilPelamar.html">Profil</a></li>
-                    <li><a href="Riwayat.html">Riwayat</a></li>
-                    <li id="menuKanan"><a href="awal.html">Keluar</a></li>
+                	<li><a href="beranda.php">Beranda</a></li>
+                    <li><a href="CariLowongan.php">Cari Lowongan</a></li>
+                    <li><a href="ProfilPelamar.php">Profil</a></li>
+                    <li><a href="Riwayat.php">Riwayat</a></li>
+                    <li id="menuKanan"><a href="keluar.php">Keluar</a></li>
                 </ul>
             </nav>
         </header>
 		<section>
         	<nav id="perusahaan">
-                <img alt="foto" width="100px" height="100px">
+                <img alt="foto" width="100px" height="100px" src="../perusahaan/img/<?=$perusahaan['foto_perusahaan']; ?> ">
                 <div id="kerja">
-                    <p>posisi pekerjaan</p>
-                    <a href="perusahaan.html">Perusahaan</a>
+                    <p><?=$lowongan['spesialisasi'] ?></p>
+                    <a href="perusahaan.php?perusahaan=<?=$perusahaan['nama_perusahaan']; ?>"><?=$perusahaan['nama_perusahaan']; ?></a>
                 </div>
-                <form name="lowongan" >
-                </form>
             </nav>
             <article id="kiri">
             	<label>Deskripsi Pekerjaan</label>
-                <p align="justify">a</p>
+                <p align="justify"><?=$lowongan['deskripsi']; ?></p>
                 <label>Persyaratan</label>
-                <p align="justify">a</p>
+                <p align="justify"><?=$lowongan['persyaratan']; ?></p>
             </article>
             <article id="kanan">
             	<label>Gambaran Perusahaan</label>
@@ -46,32 +54,24 @@
                             <th width="50%">Industri</th>
                         </tr>
                         <tr>
-                        	<td id="situs"></td>
-                            <td id="industri"></td>
+                        	<td id="situs"><a href="<?=$perusahaan['website']; ?>"><?=$perusahaan['website']; ?></a></td>
+                            <td id="industri"><?=$perusahaan['bidang']; ?></td>
                         </tr>
                         <tr>
                         	<th width="50%">Ukuran Perusahaan</th>
                             <th width="50%">Nomor Telepon</th>
                         </tr>
                         <tr>
-                        	<td id="ukuran"></td>
-                            <td id="nomor"></td>
+                        	<td id="ukuran"><?=$perusahaan['jmlh_pegawai'] ?></td>
+                            <td id="nomor"><?=$perusahaan['no_telpon']; ?></td>
                         </tr>
                         <tr>
-                        	<th width="50%">Gaya Berpakaian</th>
+                        	<th width="50%">Alamat</th>
                             <th width="50%">Waktu Bekerja</th>
                         </tr>
                         <tr>
-                        	<td id="pakaian"></td>
-                            <td id="waktu_kerja"></td>
-                        </tr>
-                        <tr>
-                        	<th width="50%">Bahasa yang Digunakan</th>
-                            <th width="50%">tunjangan</th>
-                        </tr>
-                        <tr>
-                        	<td id="bahasa"></td>
-                            <td id="tunjangan"></td>
+                        	<td id="pakaian"><?=$perusahaan['alamat_perusahaan']; ?></td>
+                            <td id="waktu_kerja"><?=$perusahaan['jam_kerja']; ?></td>
                         </tr>
                     </tbody>
                 </table>
