@@ -216,15 +216,11 @@ section{
 #kanan{
 	float:left;
 	width:39%;
+	height: 400px;
 	margin-top:10px;
 	margin-left:1%;
 	background-color:#FFFFFF;
-	padding:10px;
-}
-
-#kanan img{
-	margin:2px;
-	border:1px;
+	padding:10px 25px;
 }
 
 #kanan table{

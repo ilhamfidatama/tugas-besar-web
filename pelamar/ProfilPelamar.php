@@ -6,11 +6,6 @@
     session_start();
     $username = $_SESSION['pelamar'];
     $pelamar = ambils("SELECT * FROM pelamar WHERE username='$username'")[0];
-    if ($_GET['status']) {
-        echo "<script>
-            alert('Data Berhasil disimpan!');
-        </script>";
-    }
 
 ?>    
 
@@ -43,7 +38,7 @@
                 	<tbody>
                     	<tr>
                         	<td width="30%" align="center" valign="middle">
-                            	<img id="foto" alt="foto profil" width="60px" height="60px">
+                            	<img id="foto" alt="foto profil" width="60px" height="60px" src="img/<?=$pelamar['foto_profil']; ?>">
                             </td>
                             <th id="namaLengkap" align="left"><?=$pelamar['nama_lengkap']; ?></th>
                         </tr>
@@ -52,11 +47,7 @@
                 <hr>
                 <ul>
                 	<li><a href="ProfilPelamar.php">Biodata</a></li>
-                    <li><a href="ProfilPengalaman.php">Pengalaman</a></li>
-                    <li><a href="ProfilPendidikan.php">Pendidikan</a></li>
-                    <li><a href="ProfilKeterampilan.php">Keterampilan</a></li>
-                    <li><a href="ProfilResume.php">Resume</a></li>
-                    <li><a href="Pengaturan.php">Pengaturan Privasi</a></li>
+                    <li><a href="Pengaturan.php">Pengaturan Akun</a></li>
                 </ul>
             </nav>
             <article id="kananp">
@@ -93,16 +84,14 @@
                         <p>Nomor Ponsel</p>
                         <input type="tel" name="nomor_telpon" value="<?=$pelamar['no_telpon']; ?>"> 
                         <p>Alamat</p>
-                        <textarea name="alamat" value="<?=$pelamar['alamat_pelamar']; ?>">
-                            <?=$pelamar['alamat_pelamar']; ?>
-                        </textarea>
+                        <textarea name="alamat" value="<?=$pelamar['alamat_pelamar'];?>"><?=$pelamar['alamat_pelamar'];?></textarea>
                         <p>Status</p> 
                         <select name="status">
                             <option value="">Pilih</option>
                             <option value="Lajang">Lajang</option>
                             <option value="Menikah">Menikah</option>
                         </select>
-                        <br><br><br>
+                        <br><br>
                         <button name="batal">Batal</button>
                         <button name="simpan">Simpan</button>
 					</form>

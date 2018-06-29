@@ -10,11 +10,12 @@
 		if($user==$username and $pas==$pass){
 			session_start();
 			$_SESSION['pelamar']=$username;
-			header('location:Beranda.php');
+			echo $_SESSION['pelamar'];
+			header('location:beranda.php');
 		}
 		else{
 			echo"gagal";
-			header('location:masuk.html');
+			// header('location:masuk.html');
 		}
 		mysqli_close($conn);
 	}

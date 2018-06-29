@@ -14,25 +14,26 @@
         	<table width="100%" border="0">
   			<tbody valign="middle">
     			<tr>
-      				<td align="left">
-      					<a href="../../coba/profil.html"> Nama Perusahaan </a>
-      				</td>
-      				<td align="right">
-      					<a href="../../coba/login.html"> Keluar </a>
+      				<td align="right" width="">
+      					<a href="masuk.html">Masuk</a>
+                    </td>
+      				<td align="left" width="200px">
+      					<a href="daftar.html"> Daftar </a>
       				</td>
     			</tr>
   			</tbody>
 			</table>
         	</div>
         </header>
-		<section>
+		<section style="height:580px;">
             <article>
             	<form name="masuk" method="post" action="daftar.php">
                 	<legend align="center">Daftar Pelamar</legend>
-                    <input name="namaPelamar" type="text" placeholder="Masukkan Nama Lengkap">
-                    <input name="email" type="email" placeholder="Masukkan Email">
-                    <input name="password" type="password" minlength="6" placeholder="Masukkan Kata Sandi">
-                    <input name="ulang" type="password" minlength="6" placeholder="Masukkan Ulang Kata Sandi">
+                    <input name="namaPelamar" type="text" placeholder="Masukkan Nama Lengkap" maxlength="25" required>
+                    <input name="email" type="email" placeholder="Masukkan Email" maxlength="40" required>
+                    <input name="username" type="text" placeholder="Masukkan Username" maxlength="15" required>
+                    <input name="password" type="password" minlength="6" placeholder="Masukkan Kata Sandi" required>
+                    <input name="ulang" type="password" minlength="6" placeholder="Masukkan Ulang Kata Sandi" required>
                     <button name="daftar" type="submit" value="1">Daftar Sekarang</button>
                 </form>
             </article>

@@ -62,7 +62,9 @@ hr{
 	height: 30px;
 }
 
-$kananp form textarea{
+#kananp form textarea{
 	width:50%;
 	height:70px;
+	vertical-align:top;
+	text-align:left;
 }

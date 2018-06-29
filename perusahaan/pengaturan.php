@@ -1,10 +1,11 @@
 <?php  
   require 'tambahan.php';
+  session_start();
+  $username=$_SESSION['akun'];
   if($username=="" || $username==" "){
     header("location:masuk.html");
   }
-  session_start();
-  $username=$_SESSION['akun'];
+  
   $perusahaan=ambils("SELECT * FROM perusahaan WHERE username='$username'")[0];
 ?>
 <!doctype html>
