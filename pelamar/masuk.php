@@ -10,7 +10,6 @@
 		if($user==$username and $pas==$pass){
 			session_start();
 			$_SESSION['pelamar']=$username;
-			echo"berhasil ".$username;
 			header('location:Beranda.php');
 		}
 		else{

@@ -13,10 +13,20 @@
   $id = $_GET['loker'];
   if($username=="" || $username==" "){
     header("location:masuk.html");
-  } 
+  }
+  if (isset($_POST['tolak_lamaran'])) {
+    $username_pelamar = $_POST['username_pelamar'];
+    $update = mysqli_query($conn, "UPDATE melamar SET status='ditolak' WHERE username_pelamar='$username_pelamar' ");
+  }
+  elseif (isset($_POST['terima_lamaran'])) {
+    $username_pelamar = $_POST['username_pelamar'];
+    $update = mysqli_query($conn, "UPDATE melamar SET status='diterima' WHERE username_pelamar='$username_pelamar' ");
+  }
+
   $data = ambils("SELECT * FROM melamar WHERE id_lowongan = '$id'");
   $nama = ambil1("SELECT nama_perusahaan FROM perusahaan WHERE username='$username'");
   $judul = ambil1("SELECT judul FROM lowongan WHERE id_lowongan='$id' ");
+  
   if (isset($_POST['ditolak'])) {
     $status=$_POST['ditolak'];
     $data = ambils("SELECT * FROM melamar WHERE id_lowongan = '$id' AND status='$status'");

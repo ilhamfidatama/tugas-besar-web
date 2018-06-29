@@ -1,3 +1,12 @@
+<?php
+    require 'tambahan.php';
+    // require 'Pelamar.css';
+    session_start();
+    $pelamar=$_SESSION['pelamar'];
+    $perusahaan = $_POST['nama_perusahaan'];
+    $perusahaan = ambils("SELECT * FROM perusahaan WHERE nama_perusahaan='$perusahaan' ")[0];
+?>
+
 <!doctype html>
 <html>
 <head>
@@ -12,11 +21,11 @@
         	</div>
             <nav>
             	<ul>
-                	<li><a href="beranda.html">Beranda</a></li>
-                    <li><a href="CariLowongan.html">Cari Lowongan</a></li>
-                    <li><a href="ProfilPelamar.html">Profil</a></li>
-                    <li><a href="Riwayat.html">Riwayat</a></li>
-                    <li id="menuKanan"><a href="awal.html">Keluar</a></li>
+                	<li><a href="beranda.php">Beranda</a></li>
+                    <li><a href="CariLowongan.php">Cari Lowongan</a></li>
+                    <li><a href="ProfilPelamar.php">Profil</a></li>
+                    <li><a href="Riwayat.php">Riwayat</a></li>
+                    <li id="menuKanan"><a href="keluar.php">Keluar</a></li>
                 </ul>
             </nav>
         </header>
@@ -24,9 +33,15 @@
         	<nav id="perusahaan">
                 <img alt="foto" width="100px" height="100px" src="../perusahaan/img/<?=$perusahaan['foto_perusahaan']; ?> ">
                 <div id="kerja">
-                    <a><?=$perusahaan['nama_perusahaan']; ?></a>
+                    <p><?=$perusahaan['nama_perusahaan']; ?></p>
                     <p><?=$perusahaan['bidang'] ?></p>
                 </div>
+
+                <form id="list" method="POST" action="list.php">
+                    <input type="hidden" name="username_perusahaan" value="<?=$perusahaan['username']; ?> ">
+                    <button>Lihat Daftar Lowongan</button>
+                </form>
+
             </nav>
             <article id="deskripsi">
             	<table border="0" cellpadding="1" cellspacing="1" width="100%">
@@ -35,21 +50,15 @@
                     	<th width="50%">Deskripsi</th>
                     </tr>
                     <tr>
-                    	<td colspan="2"></td>
+                    	<td><?=$perusahaan['deskripsi']; ?></td>
                     </tr>
                     <tr>
                     	<th>Visi Perusahaan</th>
                         <th>Misi Perusahaan</th>
                     </tr>
                     <tr>
-                    	<td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                    	<th>Mengapa bergabung dengan kami?</th>
-                    </tr>
-                    <tr>
-                    	<td colspan="2"></td>
+                    	<td><?=$perusahaan['visi']; ?></td>
+                        <td><?=$perusahaan['misi']; ?></td>
                     </tr>
                 </tbody>
                 </table>

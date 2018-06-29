@@ -14,7 +14,7 @@
     header("location:masuk.html");
   } 
   $data = ambils("SELECT * FROM pelamar WHERE username = '$user_pelamar'")[0];
-  $melamar = ambils("SELECT * FROM melamar WHERE username_pelamar='$user_pelamar' ");
+  $melamar = ambils("SELECT * FROM melamar WHERE username_pelamar='$user_pelamar' ")[0];
   $nama = ambil1("SELECT nama_perusahaan FROM perusahaan WHERE username='$username'");
   ?>
 		<header>
@@ -116,10 +116,12 @@
     						</tr>
   						</tbody>
 					</table>
-          <form method="post" action="ListPelamar.php?pelamar=<?=$melamar['username']; ?>">
-                  <button type="submit" name="tolak">Tolak</button>
-                  <button type="submit" name="terima">Terima</button>
-                </form>
+            <form method="post" action="ListPelamar.php?loker=<?=$melamar["id_lowongan"];?>">
+              <input type="hidden" name="username_pelamar" value="<?=$data['username']; ?>">
+              <button type="submit" name="tolak_lamaran">Tolak</button>
+              <button type="submit" name="terima_lamaran">Terima</button>
+            </form>
+                  
                 </div>
 				<?php 
           mysqli_close($conn);

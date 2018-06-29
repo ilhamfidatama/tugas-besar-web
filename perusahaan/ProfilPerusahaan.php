@@ -8,6 +8,9 @@
 	<?php
 	session_start();
 	$username=$_SESSION['akun'];
+  if($username=="" || $username==" "){
+    header("location:masuk.html");
+  } 
 	$conn=mysqli_connect("localhost", "root", "", "lope");
 	$user_db=mysqli_query($conn, "select email, npwp, alamat_perusahaan, nama_perusahaan, area, tanggal_terdaftar, bidang, deskripsi, visi, misi, jmlh_pegawai, website, no_telpon, jam_kerja, foto_perusahaan from perusahaan where username='$username'");
 	$baris=mysqli_fetch_row($user_db);

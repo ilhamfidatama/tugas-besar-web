@@ -1,6 +1,9 @@
 <?php  
     session_start();
     $pelamar=$_SESSION['pelamar'];
+    if($pelamar=="" || $pelamar==" "){
+        header("location:masuk.html");
+    } 
     require 'tambahan.php';
 
     $lowongan = ambils("SELECT * FROM lowongan");

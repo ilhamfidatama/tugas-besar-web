@@ -57,6 +57,12 @@ hr{
 	padding-top:10px;
 }
 
-#kananp input{
-	
+#kananp form input, #kananp form select{
+	width: 50%;
+	height: 30px;
+}
+
+$kananp form textarea{
+	width:50%;
+	height:70px;
 }
