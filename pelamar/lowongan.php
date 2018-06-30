@@ -2,6 +2,18 @@
     require 'tambahan.php';
     session_start();
     $pelamar=$_SESSION['pelamar'];
+    if (isset($_POST['lamar'])) {
+        $id_lowongan = $_POST['job'];
+        $cv=uploadCV();
+        $berkas=uploadtambahan();
+        
+        date_default_timezone_set('Asia/Brunei');
+        $tanggal=date("Y-m-d H:i:s");
+        $lamar = mysqli_query($conn, "INSERT INTO melamar(username_pelamar, id_lowongan, tanggal_mendaftar, berkas_tambahan, cv) VALUES ('$pelamar', $id_lowongan, '$tanggal', '$berkas', '$cv') ");
+        echo "<script>
+            alert('Berhasil Melamar');
+        </script>";
+    }
     if($pelamar=="" || $pelamar==" "){
         header("location:masuk.html");
     } 
@@ -87,7 +99,7 @@
                 </table>
             </article>
             <article class="kanan1">
-                <form method="post" action="lamar.php" enctype="multipart/form-data">
+                <form method="post" action="" enctype="multipart/form-data">
                     <input type="hidden" name="job" value="<?=$id_lowongan; ?>">
                     <label>Upload CV (.pdf) </label>
                     <input type="file" name="cv" value="">

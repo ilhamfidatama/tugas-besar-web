@@ -4,6 +4,7 @@
 	$username = $_SESSION['pelamar'];
 	if (isset($_POST['simpan'])) {
 		$nama_lengkap = $_POST['nama_lengkap'];
+		$tempat_lahir = $_POST['tempat_lahir'];
 		$tanggal_lahir = $_POST['tanggal_lahir'];
 		$tinggi_badan = $_POST['tinggi_badan'];
 		$no_telpon = $_POST['nomor_telpon'];
@@ -32,7 +33,7 @@
 		}else{
 			$status = $_POST['stat'];
 		}
-		$update = mysqli_query($conn, "UPDATE pelamar SET nama_lengkap='$nama_lengkap', tanggal_lahir='$tanggal_lahir', jenis_kelamin='$jenis_kelamin', no_telpon='$no_telpon', alamat_pelamar='$alamat', status='$status', tinggi_badan=$tinggi_badan, agama='$agama', foto_profil='$foto_profil'");
+		$update = mysqli_query($conn, "UPDATE pelamar SET nama_lengkap='$nama_lengkap', tanggal_lahir='$tanggal_lahir', jenis_kelamin='$jenis_kelamin', no_telpon='$no_telpon', alamat_pelamar='$alamat', status='$status', tinggi_badan=$tinggi_badan, agama='$agama', foto_profil='$foto_profil' tempat_lahir='$tempat_lahir' ");
 
 		header('location:ProfilPelamar.php');
 	}

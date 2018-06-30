@@ -18,11 +18,6 @@
 	$mis=$_POST['misi'];
 	$gambarlama=$_POST['logolama'];
 
-	var_dump($_POST);
-	echo "<br><br>";
-	var_dump($_FILES);
-	echo "<br><br>";
-
 	if ( $_FILES['logo']['error'] == 4 ) {
 		$gambar=$gambarlama;
 	}else{
@@ -32,10 +27,9 @@
 
 	if($hasil==1){
 		$update=mysqli_query($conn, "UPDATE perusahaan SET nama_perusahaan='$nama',alamat_perusahaan='$alamat', no_telpon='$telpon', tanggal_terdaftar='$tanggal', bidang='$bidang', deskripsi='$des', visi='$vis', misi='$mis', jmlh_pegawai='$pegawai', website='$website', jam_kerja='$kerja', npwp='$npwp', area='$area', foto_perusahaan='$gambar' WHERE username='$username'");
-		//echo $gambar;
-		// header("location:ProfilPerusahaan.php");
+		header('location:ProfilPerusahaan.php');
 	}else{
-		// header('location:edit profil.php');
+		header('location:edit profil.php');
 	}
 	mysqli_close($conn);
 ?>

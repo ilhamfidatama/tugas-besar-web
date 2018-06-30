@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>ADMIN</title>
+<link href="admin.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<section>
+    	<nav id="kiri">
+        	<img src="../foto/logo.jpg" alt="logo">
+            <hr>
+            <ul>
+                <li><a href="pelamar.html">Pelamar</a></li>
+                <li><a href="perusahaan.html">Perusahaan</a></li>
+                <li><a href="loker.html">Lowongan Pekerjaan</a></li>
+                <li><a href="keluar.html">Keluar</a></li>
+            </ul>
+        </nav>
+        <article id="kanan">
+        	<h1>Daftar Lowongan</h1>
+            <h3>Total : </h3>
+            <table id="list" width="100%" border="0" cellspacing="2px" cellpadding="2px">
+              <tbody>
+                <tr>
+                  <th width="6%">No.</th>
+                  <th width="15%">Judul</th>
+                  <th width="29%">Jabatan</th>
+                  <th width="35%">Bidang</th>
+                  <th width="10%">Detail</th>
+                </tr>
+                <tr>
+                	<td>1</td>
+                    <td>ilham</td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                    <form method="post" action="detailPelamar.php">
+                    	<input type="hidden" name="pelamar" value="">
+                    	<button type="submit" name="detail">Detail</button>
+                    </form>
+                    </td>
+                </tr>
+              </tbody>
+            </table>
+        </article>
+    </section>
+    <footer class="bawah" align="right"><p>Hak Cipta &copy;Informatika UNRAM</p></footer>
+</body>
+</html>

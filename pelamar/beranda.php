@@ -48,17 +48,17 @@ echo '<link href="Pelamar.css" rel="stylesheet" type="text/css">';
             <?php
 				foreach ($lowongan as $pekerjaan) :
                     $perusahaan=$pekerjaan['username_perusahaan'];
-                    $nama_perusahaan=ambil1("SELECT nama_perusahaan FROM perusahaan WHERE username='$perusahaan' ");
+                    $perusahaan=ambils("SELECT * FROM perusahaan WHERE username='$perusahaan' ")[0];
             ?>
 			<article id="kiri">
 				<table border="0" width="100%" cellpadding="1" cellspacing="1">
        				<tbody>
            				<tr>
            					<th id="judul" width="60%" align="left"><a href="lowongan.php?id=<?=$pekerjaan['id_lowongan']; ?>"><?=$pekerjaan['judul']; ?></a></th>
-                        	<td rowspan="5"><img width="300px" height="150px" src="../perusahaan/lowongan/"></td>
+                        	<td rowspan="5"><img width="300px" height="150px" src="../perusahaan/img/<?=$perusahaan['foto_perusahaan']; ?>"></td>
                     	</tr>
                     	<tr>
-                        	<td id="namaPerusahaan"><?=$nama_perusahaan; ?></td>
+                        	<td id="namaPerusahaan"><?=$perusahaan['nama_perusahaan']; ?></td>
                     	</tr>
                     	<tr>
                         	<td id="spesialisasi"><?=$pekerjaan['spesialisasi']; ?></td>

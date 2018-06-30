@@ -15,9 +15,6 @@
 		$mulai=date("Y-m-d H:i:s");
 		$query="INSERT INTO lowongan (judul, jabatan, spesialisasi, jmlh_terima, gaji, tanggal_buka, tanggal_tutup, deskripsi, persyaratan, username_perusahaan) VALUES ('$judul', '$jabatan', '$spesialisasi', $diterima, '$gaji', '$mulai', '$batas', '$deskripsi', '$persyaratan', '$username') ";
 		$tambah=mysqli_query($conn, $query);
-		echo "<script>
-				alert('Lowongan berhasil diupload');
-			</script>";
 		header('location:DaftarLowongan.php');
 
 	}else{

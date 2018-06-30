@@ -6,11 +6,51 @@
 </head>
 <body>
         <?php 
+            require 'tambahan.php';
             session_start();
             $username=$_SESSION['akun'];
             if($username=="" || $username==" "){
                 header("location:masuk.html");
             } 
+
+            if (isset($_POST['simpan'])) {
+                $hasil=$_POST['simpan'];
+                $nama=$_POST['nama'];
+                $alamat=$_POST['alamat_perusahaan'];
+                $tanggal=$_POST['tanggal_berdiri'];
+                $npwp=$_POST['npwp'];
+                $telpon=$_POST['telepon'];
+                $bidang=$_POST['jenis'];
+                $website=$_POST['website'];
+                $area=$_POST['area'];
+                $pegawai=$_POST['jumlah_pegawai'];
+                $kerja=$_POST['jam_kerja'];
+                $des=$_POST['deskripsi'];
+                $vis=$_POST['visi'];
+                $mis=$_POST['misi'];
+                $gambarlama=$_POST['logolama'];
+
+                if ( $_FILES['logo']['error'] == 4 ) {
+                    $gambar=$gambarlama;
+                }else{
+                    $gambar=uploadGambar();
+                }
+
+                if($hasil==1){
+                    $update=mysqli_query($conn, "UPDATE perusahaan SET nama_perusahaan='$nama',alamat_perusahaan='$alamat', no_telpon='$telpon', tanggal_terdaftar='$tanggal', bidang='$bidang', deskripsi='$des', visi='$vis', misi='$mis', jmlh_pegawai='$pegawai', website='$website', jam_kerja='$kerja', npwp='$npwp', area='$area', foto_perusahaan='$gambar' WHERE username='$username'");
+                    if ($update) {
+                        echo "<script>
+                            alert('Profil Berhasil di Update');
+                        </script>";
+                    }else{
+                        echo "<script>
+                            alert('Profil Gagal di Update');
+                        </script>";
+                    }
+                }
+            }else if (isset($_POST['batal'])) {
+                header('location:ProfilPerusahaan.php');
+            }
         ?>
         <header>
         	<div class="logo">
@@ -48,7 +88,7 @@
     			</ul>
             </nav>
             <article>
-            	<form name="edit" method="POST" action="edit.php" enctype="multipart/form-data">
+            	<form name="edit" method="POST" action="" enctype="multipart/form-data">
                         <input type="hidden" name="logolama" value="<?= $gambar; ?>"></input>
             			<label>Profil <?php echo$nama; ?></label>
                 		<p>Nama Perusahaan :</p>
@@ -179,7 +219,7 @@
                 			<p>Misi Perusahaan :</p>
                 			<textarea name="misi" value="<?php echo$misi; ?>"><?php echo$misi; ?></textarea>
                 			<?php echo'<br>'; ?>
-                			<button class="batal" type="submit" name="simpan" value="0">Batal</button>
+                			<button class="batal" type="submit" name="batal" value="0">Batal</button>
                 			<button class="simpan" type="submit" name="simpan" value="1">Simpan</button>
                 </form>
         	</article>

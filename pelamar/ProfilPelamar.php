@@ -2,9 +2,53 @@
     require 'tambahan.php';
     // require 'profil.css';
     // require 'pelamar.css';
-
     session_start();
     $username = $_SESSION['pelamar'];
+    var_dump($username);
+    
+    if (isset($_POST['simpan'])) {
+        $nama_lengkap = $_POST['nama_lengkap'];
+        $tempat_lahir = $_POST['tempat_lahir'];
+        $tanggal_lahir = $_POST['tanggal_lahir'];
+        $tinggi_badan = $_POST['tinggi_badan'];
+        $no_telpon = $_POST['nomor_telpon'];
+        $alamat = $_POST['alamat'];
+        //cek apakah mau upload foto profil atau tidak
+        if ($_FILES['foto']['name'] != "") {
+            $foto_profil = uploadProfil();
+        }else{
+            $foto_profil = $_POST['fotoP'];
+        }
+        //cek jenis kelamin di set ulang atau tidak
+        if ($_POST['jenis_kelamin'] != "") {
+            $jenis_kelamin = $_POST['jenis_kelamin'];
+        }else{
+            $jenis_kelamin = $_POST['jk'];
+        }
+        //cek agama apakah di set ulang atau tidak
+        if ($_POST['agama'] != "") {
+            $agama = $_POST['agama'];
+        }else{
+            $agama = $_POST['religion'];
+        }
+        //cek status apakah di set ulang atau tidak
+        if ($_POST['status'] != "") {
+            $status = $_POST['status'];
+        }else{
+            $status = $_POST['stat'];
+        }
+        $update = mysqli_query($conn, "UPDATE pelamar SET nama_lengkap='$nama_lengkap', tanggal_lahir='$tanggal_lahir', jenis_kelamin='$jenis_kelamin', no_telpon='$no_telpon', alamat_pelamar='$alamat', status='$status', tinggi_badan=$tinggi_badan, agama='$agama', foto_profil='$foto_profil', tempat_lahir='$tempat_lahir' WHERE username='$username' ");
+        if ($update) {
+            echo "<script>
+                alert('Profil Berhasil di Update');
+            </script>";
+        }else{
+            echo "<script>
+                alert('Profil Gagal di Update');
+            </script>";
+        }
+    }
+
     $pelamar = ambils("SELECT * FROM pelamar WHERE username='$username'")[0];
 
 ?>    
@@ -52,7 +96,7 @@
             </nav>
             <article id="kananp">
             	<h2>Profil Saya</h2>
-                	<form name="biodata" method="post" action="editPelamar.php" enctype="multipart/form-data">
+                	<form name="biodata" method="post" action="" enctype="multipart/form-data">
                         <input type="hidden" name="fotoP" value="<?=$pelamar['foto_profil']; ?>">
                         <input type="hidden" name="jk" value="<?=$pelamar['jenis_kelamin']; ?>">
                         <input type="hidden" name="religion" value="<?=$pelamar['agama']; ?>">
@@ -61,6 +105,8 @@
                         <input type="text" name="nama_lengkap" value="<?=$pelamar['nama_lengkap']; ?>">
                         <p>Unggah Foto</p>
                         <input type="file" name="foto" value="">
+                        <p>Tempat Lahir</p>
+                        <input type="text" name="tempat_lahir" value="<?=$pelamar['tempat_lahir']; ?>">
                         <p>Tanggal Lahir</p>
                         <input type="date" name="tanggal_lahir" value="<?=$pelamar['tanggal_lahir']; ?>">
                         <p>Jenis Kelamin</p>

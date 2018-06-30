@@ -1,0 +1,120 @@
+@charset "utf-8";
+/* CSS Document */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+	padding:0px;
+	margin:0px auto;
+	background-color:#E4E4E4;
+}
+
+#kiri{
+	float:left;
+	width:25%;
+	height:100%;
+	background-color:#FFFFFF;
+}
+
+#kiri hr{
+	height:5px;
+}
+
+#kiri ul {
+    list-style-type: none;
+	width:90%;
+	padding:0;
+	margin:5% auto;
+}
+
+#kiri ul li{
+	height:30px;
+	line-height:30px;
+	width:100%;
+	margin:10px auto;
+	padding-left:50px;
+}
+
+#kiri ul li:hover{
+	background-color:#F1F1F1;
+	color:#0021E9;
+}
+
+#kiri ul li a{
+	text-decoration:none;
+	line-height:20px;
+	color:#000000;
+}
+
+#kanan{
+	float:left;
+	width:74%;
+	min-height:685px;
+	margin-left:1%;
+	background-color:#FFFFFF;
+	padding:10px;
+}
+
+#kanan h1{
+	font-size:40px;
+	margin-top:0;
+	margin-bottom:0;
+}
+
+#kanan h3{
+	font-size:20px;
+	margin-top:0;
+}
+
+#kanan table{
+	border-collapse:collapse;
+	margin-top:10px;
+}
+
+#kanan table th{
+	border-bottom:2px solid #000000;
+	font-size:18px;
+	text-align:left;
+}
+
+#kanan table td{
+	text-align:left;
+	font-size:16px;
+	padding-top:10px;
+	padding-bottom:10px;
+	vertical-align:top;
+}
+
+#list tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+#kanan form{
+	height:20px;
+	line-height:20px;
+}
+
+#kanan form button{
+	height:20px;
+}
+
+section:after {
+	content: "";
+    display: table;
+    clear: both;
+}
+
+footer {
+    background-color: #0021E9;
+    text-align: right;
+    color: white;
+	height:30px;
+}
+
+footer p{
+	line-height:30px;
+	padding-right:20px;
+}

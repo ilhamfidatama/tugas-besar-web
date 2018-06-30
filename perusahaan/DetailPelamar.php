@@ -56,7 +56,7 @@
                       <td width="3px">:</td>
                       <td id="nama" width="50%"><?php echo$data['nama_lengkap']; ?></td>
                       <td rowspan="5" bordercolor="#000000" align="center" id="gambar">
-                        <img id="foto" alt="foto profil" height="150px" width="150px" src="../pelamar/img/<?=$gambar; ?>">
+                        <img id="foto" alt="foto profil" height="150px" width="150px" src="../pelamar/img/<?=$data['foto_profil']; ?>">
                       </td>
     						</tr>
                             <tr>
@@ -85,34 +85,14 @@
       							<td><?php echo$data['agama']; ?></td>
     						</tr>
                 <tr>
-                    <td width="30%">Skill yang dikuasai</td>
-                    <td width="3px">:</td>
-                    <td><?= $data['skill1'].", ".$data['skill2'].", ".$data['skill3'] ; ?></td>
-                </tr>
-                            <tr>
-      							<td width="30%">Pendidikan Terakhir</td>
-      							<td width="3px">:</td>
-      							<td><?php echo$data['pendidikan_terakhir']; ?></td>
-    						</tr>
-                <tr>
-                    <td width="30%">Nama Institusi</td>
-                    <td width="3px">:</td>
-                    <td><?php echo$data['nama_institusi']; ?></td>
-                </tr>
-							<tr>
-      							<td width="30%">Bidang Studi</td>
-      							<td width="3px">:</td>
-      							<td><?php echo$data['bidang_studi']; ?></td>
-    						</tr>
-                            <tr>
       							<td width="30%">CV</td>
       							<td width="3px">:</td>
-      							<td><?php echo$melamar['cv']; ?></td>
+      							<td><a href="../melamar/cv/<?=$melamar['cv']; ?>"><?=$melamar['cv']; ?></a></td>
     						</tr>
-                            <tr>
+                <tr>
       							<td width="30%">Berkas Tambahan</td>
       							<td width="3px">:</td>
-      							<td colspan="2"><?php echo$melamar['berkas_tambahan']; ?></td>
+      							<td colspan="2"><a href="../melamar/berkas/<?=$melamar['berkas_tambahan']; ?>"><?=$melamar['berkas_tambahan']; ?></a></td>
     						</tr>
   						</tbody>
 					</table>
