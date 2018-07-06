@@ -9,12 +9,90 @@
     if (isset($_POST['cari'])) {
     	$gaji = $_POST['gaji'];
     	$spesialisasi = $_POST['spesialisasiP'];
-    	$jabatan = $_POST['posisi'];
-    	if ($gaji=="" && $spesialisasi=="" && $jabatan=="" ) {
-    		$lowongan = ambils("SELECT * FROM lowongan");
-    	}else{
-    		$lowongan = ambils("SELECT * FROM lowongan WHERE gaji='$gaji' OR spesialisasi='$spesialisasi' OR jabatan='$jabatan' ");
+    	$jabatan = $_POST['jabatan'];
+        $lokasi = $_POST['lokasi'];
+        // gaji, lokasi, jabatan, spesialisasiP
+        
+        //kondisi jika semua terisi
+    	if ($_POST['gaji'] != "" && $_POST['spesialisasiP'] != "" && $_POST['jabatan'] != "" && $_POST['lokasi'] != "") {
+            $lowongan = ambils("SELECT * FROM lowongan WHERE gaji='$gaji' AND spesialisasi='$spesialisasi' AND jabatan='$jabatan' AND username_perusahaan=(SELECT username FROM perusahaan WHERE area='$lokasi') ");
     	}
+
+        //3 kondisi terpenuhi
+        //kondisi jika hanya gaji, spesialisasi, jabatan
+        elseif ($_POST['gaji'] != "" && $_POST['spesialisasiP'] != "" && $_POST['jabatan'] != "") {
+            $lowongan = ambils("SELECT * FROM lowongan WHERE gaji='$gaji' AND spesialisasi='$spesialisasi' AND jabatan='$jabatan' ");
+        }
+
+        //kondisi jika hanya gaji, spesialisasi, lokasi
+        elseif ($_POST['gaji'] != "" && $_POST['spesialisasiP'] != "" && $_POST['lokasi'] != "") {
+            $lowongan = ambils("SELECT * FROM lowongan WHERE gaji='$gaji' AND spesialisasi='$spesialisasi' AND username_perusahaan=(SELECT username FROM perusahaan WHERE area='$lokasi') ");
+        }
+
+        //kondisi jika hanya gaji, jabatan, lokasi
+        elseif ($_POST['gaji'] != "" && $_POST['jabatan'] != "" && $_POST['lokasi'] != "") {
+            $lowongan = ambils("SELECT * FROM lowongan WHERE gaji='$gaji' AND jabatan='$jabatan' AND username_perusahaan=(SELECT username FROM perusahaan WHERE area='$lokasi') ");
+        }
+
+        //kondisi jika hanya spesialisasi, jabatan, lokasi
+        elseif ($_POST['jabatan'] != "" && $_POST['spesialisasiP'] != "" && $_POST['lokasi'] != "") {
+            $lowongan = ambils("SELECT * FROM lowongan WHERE spesialisasi='$spesialisasiP' AND jabatan='$jabatan' AND username_perusahaan=(SELECT username FROM perusahaan WHERE area='$lokasi') ");
+        }
+
+        //2 kondisi terpenuhi
+        //kondisi jika gaji dan spesialisasi terpenuhi
+        elseif ($_POST['gaji'] != "" && $_POST['spesialisasiP']) {
+            $lowongan = ambils("SELECT * FROM lowongan WHERE gaji='$gaji' AND spesialisasi='$spesialisasiP' ");
+        }
+
+        //kondisi jika gaji dan jabatan terpenuhi
+        elseif ($_POST['gaji'] != "" && $_POST['jabatan']) {
+            $lowongan = ambils("SELECT * FROM lowongan WHERE gaji='$gaji' AND jabatan='$jabatan' ");
+        }
+
+        //kondisi jika gaji dan jabatan lokasi terpenuhi
+        elseif ($_POST['gaji'] != "" && $_POST['lokasi']) {
+            $lowongan = ambils("SELECT * FROM lowongan WHERE gaji='$gaji' AND username_perusahaan=(SELECT username FROM perusahaan WHERE area='$lokasi') ");
+        }
+
+        //kondisi jika jabatan dan spesialisasiP terpenuhi
+        elseif ($_POST['jabatan'] != "" && $_POST['spesialisasiP']) {
+            $lowongan = ambils("SELECT * FROM lowongan WHERE jabatan='$jabatan' AND spesialisasi='$spesialisasi' ");
+        }
+
+        //kondisi jika jabatan dan spesialisasiP terpenuhi
+        elseif ($_POST['jabatan'] != "" && $_POST['lokasi']) {
+            $lowongan = ambils("SELECT * FROM lowongan WHERE jabatan='$jabatan' AND username_perusahaan=(SELECT username FROM perusahaan WHERE area='$lokasi') ");
+        }
+
+        //kondisi jika lokasi dan spesialisasiP terpenuhi
+        elseif ($_POST['jabatan'] != "" && $_POST['lokasi']) {
+            $lowongan = ambils("SELECT * FROM lowongan WHERE spesialisasi='$spesialisasi' AND username_perusahaan=(SELECT username FROM perusahaan WHERE area='$lokasi') ");
+        }
+
+
+        //1 kondisi terpenuhi ada 4
+        //gaji
+        elseif ($_POST['gaji'] != "") {
+            $lowongan = ambils("SELECT * FROM lowongan WHERE gaji='$gaji' ");
+        }
+
+        //spesialisasi
+        elseif ($_POST['spesialisasiP'] != "") {
+            $lowongan = ambils("SELECT * FROM lowongan WHERE spesialisasi='$spesialisasi' ");
+        }
+
+        //jabatan
+        elseif ($_POST['jabatan'] != "") {
+            $lowongan = ambils("SELECT * FROM lowongan WHERE jabatan='$jabatan' ");
+        }
+
+        //lokasi
+        elseif ($_POST['lokasi'] != "") {
+            $lowongan = ambils("SELECT * FROM lowongan WHERE username_perusahaan=(SELECT username FROM perusahaan WHERE area='$lokasi') ");
+        }
+
+    
     }else{
     	$lowongan = ambils("SELECT * FROM lowongan");
     }
@@ -45,7 +123,7 @@
 		<section>
         	<nav id="pencarian">
             	<form name="pencarian" id="cari" method="post" action="">
-                	<select name="posisi">
+                	<select name="jabatan">
                         <option value="">POSISI</option>
                         <option value="CEO / GM / Direktur / Manajer Senior">CEO / GM / Direktur / Manajer Senior</option>
                         <option value="Manajer / Asisten Manajer">Manajer / Asisten Manajer</option>
@@ -160,6 +238,43 @@
                         <option value="Rp 30.100.000 s/d Rp 50.000.000">Rp 30.100.000 s/d Rp 50.000.000</option>
                         <option value="Rp 50.100.000 s/d Rp 70.000.000">Rp 50.100.000 s/d Rp 70.000.000</option>
                     </select>
+                    <select name="lokasi">
+                        <option value="" >Lokasi</option>
+                        <option value="Aceh" >Aceh</option>
+                        <option value="Bali">Bali</option>
+                        <option value="Bangka Belitung">Bangka Belitung</option>
+                        <option value="Banten">Banten</option>
+                        <option value="Bengkulu">Bengkulu</option>
+                        <option value="Gorontalo">Gorontalo</option>
+                        <option value="Jakarta Raya">Jakarta Raya</option>
+                        <option value="Jambi">Jambi</option>
+                        <option value="Jawa Barat">Jawa Barat</option>
+                        <option value="Jawa Tengah">Jawa Tengah</option>
+                        <option value="Jawa Timur">Jawa Timur</option>
+                        <option value="Kalimantan Barat">Kalimantan Barat</option>
+                        <option value="Kalimantan Selatan">Kalimantan Selatan</option>
+                        <option value="Kalimantan Tengah">Kalimantan Tengah</option>
+                        <option value="Kalimantan Timur">Kalimantan Timur</option>
+                        <option value="Kalimantan Utara">Kalimantan Utara</option>
+                        <option value="Kepulauan Riau">Kepulauan Riau</option>
+                        <option value="Lampung">Lampung</option>
+                        <option value="Maluku">Maluku</option>
+                        <option value="Maluku Utara">Maluku Utara</option>
+                        <option value="Nusa Tenggara Barat">Nusa Tenggara Barat</option>
+                        <option value="Nusa Tenggara Timur">Nusa Tenggara Timur</option>
+                        <option value="Papua">Papua</option>
+                        <option value="Papua Barat">Papua Barat</option>
+                        <option value="Riau">Riau</option>
+                        <option value="Sulawesi Barat">Sulawesi Barat</option>
+                        <option value="Sulawesi Selatan">Sulawesi Selatan</option>
+                        <option value="Sulawesi Tengah">Sulawesi Tengah</option>
+                        <option value="Sulawesi Tenggara">Sulawesi Tenggara</option>
+                        <option value="Sulawesi Utara">Sulawesi Utara</option>
+                        <option value="Sumatera Barat">Sumatera Barat</option>
+                        <option value="Sumatera Selatan">Sumatera Selatan</option>
+                        <option value="Sumatera Utara">Sumatera Utara</option>
+                        <option value="Yogyakarta">Yogyakarta</option>
+                    </select>
                     <button type="submit" name="cari" value="1">Cari Lowongan</button>
                 </form>
             </nav>
@@ -174,18 +289,21 @@
         		}
 				foreach ($lowongan as $pekerjaan) :
                     $perusahaan=$pekerjaan['username_perusahaan'];
-                    $nama_perusahaan=ambil1("SELECT nama_perusahaan FROM perusahaan WHERE username='$perusahaan' ");
+                    $perusahaan=ambils("SELECT * FROM perusahaan WHERE username='$perusahaan' ")[0];
             ?>
 			<article id="kiri">
 				<table border="0" width="100%" cellpadding="1" cellspacing="1">
        				<tbody>
            				<tr>
            					<th id="judul" width="60%" align="left"><a href="lowongan.php?id=<?=$pekerjaan['id_lowongan']; ?>"><?=$pekerjaan['judul']; ?></a></th>
-                        	<td rowspan="5"><img width="300px" height="150px" src="../perusahaan/lowongan/"></td>
+                        	<td rowspan="5"><img width="300px" height="150px" src="../perusahaan/img/<?=$perusahaan['foto_perusahaan']; ?>"></td>
                     	</tr>
                     	<tr>
-                        	<td id="namaPerusahaan"><?=$nama_perusahaan; ?></td>
+                        	<td id="namaPerusahaan"><?=$perusahaan['nama_perusahaan']; ?></td>
                     	</tr>
+                        <tr>
+                            <td id="area"><?=$perusahaan['area']; ?></td>
+                        </tr>
                     	<tr>
                         	<td id="spesialisasi"><?=$pekerjaan['spesialisasi']; ?></td>
                     	</tr>

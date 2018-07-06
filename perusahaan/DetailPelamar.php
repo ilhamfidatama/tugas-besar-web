@@ -98,8 +98,8 @@
 					</table>
             <form method="post" action="ListPelamar.php?loker=<?=$melamar["id_lowongan"];?>">
               <input type="hidden" name="username_pelamar" value="<?=$data['username']; ?>">
-              <button type="submit" name="tolak_lamaran">Tolak</button>
-              <button type="submit" name="terima_lamaran">Terima</button>
+              <button type="submit" name="tolak_lamaran" value="tolak">Tolak</button>
+              <button type="submit" name="terima_lamaran" value="diterima">Terima</button>
             </form>
                   
                 </div>

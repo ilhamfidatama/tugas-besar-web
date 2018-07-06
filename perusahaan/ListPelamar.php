@@ -27,12 +27,18 @@
   $nama = ambil1("SELECT nama_perusahaan FROM perusahaan WHERE username='$username'");
   $judul = ambil1("SELECT judul FROM lowongan WHERE id_lowongan='$id' ");
   
-  if (isset($_POST['ditolak'])) {
-    $status=$_POST['ditolak'];
+  if (isset($_POST['menunggu'])) {
+    $status=$_POST['menunggu'];
     $data = ambils("SELECT * FROM melamar WHERE id_lowongan = '$id' AND status='$status'");
   }
+  
   elseif (isset($_POST['diterima'])) {
     $status=$_POST['diterima'];
+    $data = ambils("SELECT * FROM melamar WHERE id_lowongan = '$id' AND status='$status'");
+  }
+
+  elseif (isset($_POST['ditolak'])) {
+    $status=$_POST['ditolak'];
     $data = ambils("SELECT * FROM melamar WHERE id_lowongan = '$id' AND status='$status'");
   }
   ?>
@@ -71,6 +77,7 @@
                 <button name="semua" value="semua">Semua</button>
                 <button name="menunggu" value="menunggu" style="width: 80px;">Menunggu</button>
                 <button name="diterima" value="diterima">Diterima</button>
+                <button name="ditolak" value="ditolak">Ditolak</button>
               </form>
                 <table class="daftar" width="100%" border="0" cellspacing="1px" cellpadding="1px">
   					<tbody>

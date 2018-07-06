@@ -1,0 +1,9 @@
+1. Penempatan di perusahaan (selesai)
+
+2. Cari lowongan buat kondisi baru + area penempatan di pekerjaan
+ (selesai)
+3. Pelamar cuma bisa mendaftar melamar 1kali (selesai) 
+
+4. Tombol status tolak diperbaiki
+ (selesai)
+5. Admin : tolak dan terima perusahaan yang lowongannya harus dihapus

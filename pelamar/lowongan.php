@@ -3,16 +3,26 @@
     session_start();
     $pelamar=$_SESSION['pelamar'];
     if (isset($_POST['lamar'])) {
-        $id_lowongan = $_POST['job'];
-        $cv=uploadCV();
-        $berkas=uploadtambahan();
+        $username="SELECT username_pelamar FROM melamar";
+        $data_pelamar=mysqli_query($conn, $username);
+        $data_user=[];
+        while ($baris=mysqli_fetch_row($data_pelamar)) {
+            $data_user[]=$baris[0];
+        }
+
+        if (!in_array($pelamar, $data_user)) {
+            $id_lowongan = $_POST['job'];
+            $cv=uploadCV();
+            $berkas=uploadtambahan();
+            date_default_timezone_set('Asia/Brunei');
+            $tanggal=date("Y-m-d H:i:s");
+            $melamar=mysqli_query($conn, "INSERT INTO melamar(username_pelamar, id_lowongan, tanggal_mendaftar, berkas_tambahan, cv) VALUES ('$pelamar', $id_lowongan, '$tanggal', '$berkas', '$cv') ");
+        }else{
+            echo "<script>
+                alert('Anda sudah melamar pada lowongan pekerjaan ini');
+            </script>";
+        }
         
-        date_default_timezone_set('Asia/Brunei');
-        $tanggal=date("Y-m-d H:i:s");
-        $lamar = mysqli_query($conn, "INSERT INTO melamar(username_pelamar, id_lowongan, tanggal_mendaftar, berkas_tambahan, cv) VALUES ('$pelamar', $id_lowongan, '$tanggal', '$berkas', '$cv') ");
-        echo "<script>
-            alert('Berhasil Melamar');
-        </script>";
     }
     if($pelamar=="" || $pelamar==" "){
         header("location:masuk.html");

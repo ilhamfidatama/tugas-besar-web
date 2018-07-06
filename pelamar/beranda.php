@@ -60,6 +60,9 @@ echo '<link href="Pelamar.css" rel="stylesheet" type="text/css">';
                     	<tr>
                         	<td id="namaPerusahaan"><?=$perusahaan['nama_perusahaan']; ?></td>
                     	</tr>
+                        <tr>
+                            <td id="area"><?=$perusahaan['area']; ?></td>
+                        </tr>
                     	<tr>
                         	<td id="spesialisasi"><?=$pekerjaan['spesialisasi']; ?></td>
                     	</tr>

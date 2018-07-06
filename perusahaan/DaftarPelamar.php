@@ -58,7 +58,7 @@
               <tr>
                 <?php  
                   $loker_id=$loker['id_lowongan'];
-                  $banyak=numer("SELECT id_lowongan FROM melamar WHERE id_lowongan='$loker_id'");
+                  $banyak=numer("SELECT username_pelamar FROM melamar WHERE id_lowongan='$loker_id'");
                 ?>
                   <td><?= $no; ?></td>
                   <td><?= $loker['judul']; ?></td>

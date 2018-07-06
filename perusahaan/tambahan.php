@@ -21,8 +21,11 @@
 	function numer($query){
 		global $conn;
 		$hasil=mysqli_query($conn, $query);
-		$baris=mysqli_fetch_row($hasil);
-		$banyak = count($baris);
+		$data=[];
+		while ($baris=mysqli_fetch_row($hasil)) {
+			$data[]=$baris;
+		}
+		$banyak = count($data);
 		return $banyak;
 
 	}

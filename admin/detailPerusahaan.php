@@ -2,23 +2,10 @@
     require 'tambahan.php';
     session_start();
     $username = $_SESSION['admin'];
-    if (isset($_POST['terima'])) {
-        $username_perusahaan = $_POST['username_perusahaan'];
-        $update = mysqli_query($conn, "UPDATE verifikasi SET status='DITERIMA' WHERE username_perusahaan='$username_perusahaan'");
-        echo "<script>
-            alert('Status Perusahaan telah diterima');
-        </script>";
-    }elseif (isset($_POST['tolak'])) {
-        $hapus = mysqli_query($conn, "DELETE FROM verifikasi WHERE username_perusahaan='$perusahaan'");
-        $hapus = mysqli_query($conn, "DELETE FROM lowongan WHERE username_perusahaan='$perusahaan'");
-        $hapus = mysqli_query($conn, "DELETE FROM perusahaan WHERE username='$perusahaan'");
-        header('location:perusahaan.php');
-    }else{
-        $username_perusahaan = $_POST['perusahaan'];
-    }
     if ($username == "" || $username == " ") {
         header('location:masuk.html');
     }
+    $username_perusahaan = $_POST['perusahaan'];
     $perusahaan = ambils("SELECT * FROM perusahaan WHERE username='$username_perusahaan'")[0];
 ?>
 <!doctype html>
@@ -113,7 +100,7 @@
               </tbody>
             </table>
             <br><br>
-            <form method="post" action="">
+            <form method="post" action="perusahaan.php">
                 <input type="hidden" name="username_perusahaan" value="<?=$perusahaan['username']; ?>" >
                 <button name="tolak">Tolak</button>
                 <button name="terima">Terima</button>

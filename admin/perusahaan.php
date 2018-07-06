@@ -2,6 +2,15 @@
     require 'tambahan.php';
     session_start();
     $username = $_SESSION['admin'];
+    if (isset($_POST['terima'])) {
+        $username_perusahaan = $_POST['username_perusahaan'];
+        $update = mysqli_query($conn, "UPDATE verifikasi SET status='DITERIMA' WHERE username_perusahaan='$username_perusahaan'");
+    }elseif (isset($_POST['tolak'])) {
+        $perusahaan = $_POST['username_perusahaan'];
+        $verifikasi = mysqli_query($conn, "DELETE FROM verifikasi WHERE username_perusahaan='$perusahaan'");
+        $lowongan = mysqli_query($conn, "DELETE FROM lowongan WHERE username_perusahaan='$perusahaan'");
+        $perusahaan = mysqli_query($conn, "DELETE FROM perusahaan WHERE username='$perusahaan'");
+    }
     if ($username == "" || $username == " ") {
         header('location:masuk.html');
     }
