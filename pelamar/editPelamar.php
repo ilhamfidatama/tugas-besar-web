@@ -33,7 +33,7 @@
 		}else{
 			$status = $_POST['stat'];
 		}
-		$update = mysqli_query($conn, "UPDATE pelamar SET nama_lengkap='$nama_lengkap', tanggal_lahir='$tanggal_lahir', jenis_kelamin='$jenis_kelamin', no_telpon='$no_telpon', alamat_pelamar='$alamat', status='$status', tinggi_badan=$tinggi_badan, agama='$agama', foto_profil='$foto_profil' tempat_lahir='$tempat_lahir' ");
+		$update = mysqli_query($conn, "UPDATE pelamar SET nama_lengkap='$nama_lengkap', tanggal_lahir='$tanggal_lahir', jenis_kelamin='$jenis_kelamin', no_telpon='$no_telpon', alamat_pelamar='$alamat', status='$status', tinggi_badan=$tinggi_badan, agama='$agama', foto_profil='$foto_profil' tempat_lahir='$tempat_lahir' WHERE username='$username' ");
 
 		header('location:ProfilPelamar.php');
 	}
